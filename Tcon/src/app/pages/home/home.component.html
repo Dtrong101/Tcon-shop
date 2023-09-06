@@ -1,0 +1,272 @@
+<section class="banner">
+    <div class="containers" style="width: 95%;">
+      <owl-carousel-o [options]="BannerOptions">
+        <ng-template carouselSlide>
+          <img class="banner-img" src="../../../assets/1200x628_Banner-KM-2.png" alt="">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img class="banner-img" src="https://i.pinimg.com/564x/0f/b9/38/0fb938517f5a28ba12754257d2290833.jpg" alt="">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img class="banner-img" src="../../../assets/thu-cu-doi-moi-2.jpg" alt="">
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </section>
+
+  <section class="best-selling" >
+    <div class="containers">
+      <div class="best-selling-container" *ngIf="bestSellingItem$ | async as bestSellingItem">
+        <div class="sale-price  ">
+          Sale <strong>14%</strong>
+        </div>
+        <div class="selling-col-1">
+          <div class="selling-left">
+            <ul>
+              <li>
+                <span class="count-date">{{days}}</span>
+                <span class="count-day">Ngày</span>
+              </li>
+              <li>
+                <span class="count-date">{{hours}}</span>
+                <span class="count-day">Giờ</span>
+              </li>
+              <li>
+                <span class="count-date">{{mins}}</span>
+                <span class="count-day">Phút</span>
+              </li>
+              <li>
+                <span class="count-date">{{secs}}</span>
+                <span class="count-day">Giây</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="selling-col-2">
+          <div class="selling-img" >
+            <img [src]="bestSellingItem.image" alt="">
+          </div>
+        </div>
+        <div class="selling-col-3">
+          <div class="selling-heading">
+            <a href="javascript:void(0);">{{bestSellingItem.name}}</a>
+            <div class="selling-rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+          <p>Phiên bản màu trắng</p>
+          <h3>
+            <span class="selling-amount">{{ bestSellingItem.price | number: '1.0-0' }} ₫</span>
+            <span class="selling-discount">34,000,000 ₫</span>
+          </h3>
+          <div class="selling-button">
+            <a href="javascript:void(0);" class="cart-btn" (click)="addToCart(bestSellingItem)"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+            <button type="button" class="main-button">
+              <a href="javascript:void(0);"><i class="fa fa-heart"></i></a>
+              <a (click)="goToItemDetail(bestSellingItem)"><i class="fa fa-search"></i></a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial">
+    <div class="containers">
+      <owl-carousel-o [options]="testimonial">
+        <ng-template carouselSlide>
+          <div class="testimonial-img">
+            <img src="https://media.vov.vn/sites/default/files/styles/large/public/2023-03/gettyimages-1424622759.jpg" alt="">
+          </div>
+          <div class="testimonial-content text-center">
+            <h2>Lê Văn Đỗ Kỳ</h2>
+            <h3>Cầu thủ bóng đá</h3>
+            <p>Shop uy tín, giao hàng nhanh</p>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="testimonial-img">
+            <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/1/21/1140501/Kane-Mu-Tottenham.jpg" alt="">
+          </div>
+          <div class="testimonial-content text-center">
+            <h2>Hà Duy Kiên</h2>
+            <h3>Cầu thủ bóng đá</h3>
+            <p>Giá cả hợp lý, chất lượng tốt</p>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="testimonial-img">
+            <img src="https://cdn.oneesports.gg/cdn-data/2022/11/LeagueOfLegends_Worlds2022_T1Faker_ThumbsUp.jpg" alt="">
+          </div>
+          <div class="testimonial-content text-center">
+            <h2>Faker</h2>
+            <h3>CEO T1</h3>
+            <p>Shop cam kết uy tín với chất lượng hàng đầu</p>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </section>
+
+  <div class="display-area p-3">
+    <div class="containers">
+      <div class="title">
+        <p>Best Seller</p>
+        <h1><span>Best</span> Seller</h1>
+      </div>
+      <div class="row">
+        <owl-carousel-o [options]="ItemsOptions">
+          <ng-template carouselSlide *ngFor="let item of filteredProducts$ | async">
+            <div class="col-md-3" style="width: 300px;">
+              <div class="card">
+                <div class="card-main">
+                  <div class="label label-green" (click)="addToCart(item)" routerLink="/cart" style="cursor: pointer;">Mua Ngay</div>
+                  <div class="image">
+                    <img [src]="item.image" alt="ip14" />
+                  </div>
+                  <div class="cart-line"></div>
+                  <div class="cart-item">
+                    <ul>
+                      <li>
+                        <a (click)="addToCart(item)"><i class="fa fa-shopping-basket"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-heart"></i></a>
+                      </li>
+                      <li>
+                        <a (click)="goToItemDetail(item)" style="cursor: pointer;"><i class="fa fa-search"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="content">
+                <a (click)="goToItemDetail(item)" style="cursor: pointer;">{{ item.name }}</a>
+                <p>
+                  <span class="money">{{ item.price | number: '1.0-0'}} ₫</span>
+                </p>
+              </div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+
+
+    <section class="policy">
+      <div class="containers text-center">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="policy-card">
+                <div class="round">
+                  <div class="round-icon">
+                    <i class="fas fa-car"></i>
+                  </div>
+                </div>
+                <h2>Miễn phí giao hàng</h2>
+                <p>Giao hàng nội thành trong 30 phút</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="policy-card">
+                <div class="round">
+                  <div class="round-icon">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                  </div>
+                </div>
+                <h2>Đổi trả &amp; Bảo hành</h2>
+                <p>1 đổi 1 trong 30 ngày đầu</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="policy-card">
+                <div class="round">
+                  <div class="round-icon">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                </div>
+                <h2>0934272524</h2>
+                <p>Hotline hỗ trợ 24/24</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="policy-product">
+      <div class="containers">
+          <owl-carousel-o [options]="PolicyOptions">
+            <ng-template carouselSlide>
+              <div class="policy-p-card">
+                <div class="date">
+                  <h3>2</h3>
+                  <h4>July</h4>
+                </div>
+                <div class="policy-img">
+                  <img src="../../../assets/z4265185915595_dcb78e1bd1f44de262d2b2706e521df9.jpg" alt="">
+                </div>
+                <h2>Giá iPhone 14 Pro Max tại Việt Nam lập đáy mới</h2>
+                <p>So với thời điểm giữa tháng 6, các chuỗi bán lẻ tại Việt Nam đã giảm giá thêm 200.000-500.000 đồng cho mẫu iPhone 14 Pro Max.</p>
+                <a href="" class="read-more">Xem tiếp <i class="fa fa-caret-right"></i></a>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="policy-p-card">
+                <div class="date">
+                  <h3>3</h3>
+                  <h4>Aug</h4>
+                </div>
+                <div class="policy-img">
+                  <img src="https://cdn.sforum.vn/sforum/wp-content/uploads/2023/08/a1-scaled.jpg" alt="">
+                </div>
+                <h2>So sánh Samsung Galaxy Z Fold5 và Z Fold4: Thay đổi không nhiều</h2>
+                <p>Galaxy Z Fold5 đã được Samsung tối ưu thiết kế từ Z Fold4 nhằm mang lại trải nghiệm tối ưu hơn cho người dùng, vì vậy hai chiếc điện thoại này khá giống nhau về ngoại hình</p>
+                <a href="" class="read-more">Xem tiếp <i class="fa fa-caret-right"></i></a>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="policy-p-card">
+                <div class="date">
+                  <h3>5</h3>
+                  <h4>Aug</h4>
+                </div>
+                <div class="policy-img">
+                  <img src="https://sohanews.sohacdn.com/thumb_w/1000/160588918557773824/2023/8/5/photo1691206900684-16912069008571493249515.png" alt="">
+                </div>
+                <h2>iPhone 15 dự kiến sẽ được ra mắt vào ngày 13/9?</h2>
+                <p>Lễ ra mắt iPhone 15 của Apple dự kiến sẽ diễn ra vào tháng 9 năm nay. Theo báo cáo của 9to5Mac, Apple có thể sẽ tổ chức sự kiện ra mắt vào ngày 13/9 tới.</p>
+                <a href="" class="read-more">Xem tiếp <i class="fa fa-caret-right"></i></a>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="policy-p-card">
+                <div class="date">
+                  <h3>2</h3>
+                  <h4>July</h4>
+                </div>
+                <div class="policy-img">
+                  <img src="../../../assets/z4265185915595_dcb78e1bd1f44de262d2b2706e521df9.jpg" alt="">
+                </div>
+                <h2>Giá iPhone 14 Pro Max tại Việt Nam lập đáy mới</h2>
+                <p>So với thời điểm giữa tháng 6, các chuỗi bán lẻ tại Việt Nam đã giảm giá thêm 200.000-500.000 đồng cho mẫu iPhone 14 Pro Max.</p>
+                <a href="" class="read-more">Xem tiếp <i class="fa fa-caret-right"></i></a>
+              </div>
+            </ng-template>
+          </owl-carousel-o>
+        </div>
+    </section>
+
+    <section class="partners">
+      <div class="containers">
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let partnersArrays of partnersArray"><img style="width: 100px; height: 100px;" src="{{partnersArrays.imgName}}" alt=""></ng-template>
+        </owl-carousel-o>
+      </div>
+    </section>
+
+    <app-footer></app-footer>
+  </div>

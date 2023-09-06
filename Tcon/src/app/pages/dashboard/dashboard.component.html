@@ -1,0 +1,65 @@
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/dashboard">
+              <i class="fas fa-user"></i>Thông tin cá nhân
+            </a>
+          </li>
+          <!-- Calling SignOut() Api from AuthService -->
+          <li class="nav-item">
+            <a class="nav-link" onclick="authService.SignOut()" style="cursor: pointer;">
+              <i class="fas fa-sign-out-alt"></i>Đăng xuất
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Main content -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="inner-adjust">
+        <div class="pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Tài khoản cá nhân</h1>
+        </div>
+        <!-- Show user data when logged in -->
+        <div class="row" *ngIf="authService.userData as user">
+          <div class="col-md-6">
+            <div class="media">
+              <div class="media-body">
+                <h1>Xin chào: <strong>{{user.email}}</strong></h1>
+                <p>Mã khách hàng: <strong>{{user.uid}}</strong></p>
+                <p>Họ và tên: <strong>{{ displayName }}</strong></p>
+                <p>Địa chỉ: <strong>{{address}}</strong></p>
+                <p>Số điện thoại: <strong>{{phone}}</strong></p>
+              </div>
+            </div>
+            <button (click)="toggleEditMode()" class="edit-btn">Sửa thông tin cá nhân</button>
+          </div>
+          <div *ngIf="isEditMode" class="edit-form col-md-6">
+            <form (submit)="savePersonalInfo()">
+              <label for="displayName" class="label">Họ và tên:</label>
+              <input type="text" id="displayName" name="userName" [(ngModel)]="userName" value="">
+            
+              <label for="address" class="label">Địa chỉ:</label>
+              <input type="text" id="address" name="userAddress" [(ngModel)]="userAddress" value="">
+            
+              <label for="phone" class="label">Số điện thoại:</label>
+              <input type="text" id="phone" name="userPhone" [(ngModel)]="userPhone" value="">
+            
+              <button type="submit">Lưu thông tin</button>
+            </form>          
+          </div>
+        </div>
+
+        
+      </div>
+    </main>
+  </div>
+</div>
+
+
+
+
+

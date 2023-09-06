@@ -1,0 +1,72 @@
+/* CSS cho các nút sắp xếp */
+.sort-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .order-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .order-container {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    width: 500px;
+    border-radius: 10px;
+  }
+  
+  /* CSS cho phần chi tiết đơn hàng */
+  .order-item {
+    position: relative;
+  }
+
+  .order-item p{
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .order-item button{
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-left: 170px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  
+ /* CSS cho phần chi tiết đơn hàng */
+ .order-details {
+  position: fixed;
+  top: 235px;
+  right: 0;
+  width: 480px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  z-index: 6;
+  }
+  
+  .pagination{
+    position: relative;
+    margin-left: 350px;
+    margin-top: 20px;
+  }

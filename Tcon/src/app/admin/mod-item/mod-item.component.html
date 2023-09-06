@@ -1,0 +1,104 @@
+<app-admin-nav></app-admin-nav>
+<div class="container" style="margin-top: 20px;">
+    <form (ngSubmit)="selectedItem ? updateItem() : addItem()">
+        <div class="row mb-3">
+            <label for="ItemName" class="col-sm-2 col-form-label">Tên sản phẩm</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="ItemName" name="ItemName" [(ngModel)] ="ItemName">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="ItemImage" class="col-sm-2 col-form-label">Hình ảnh sản phẩm</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="ItemImage" name="ItemImage" [(ngModel)]="ItemImage">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="ItemType" class="col-sm-2 col-form-label">Loại sản phẩm</label>
+            <div class="col-sm-10">
+                <select id="ItemType" class="form-select" name="ItemType" [(ngModel)] ="ItemType">
+                    <option>
+                        Điện thoại
+                    </option>
+                    <option>
+                        Máy tính bảng
+                    </option>
+                    <option>
+                        Phụ kiện
+                    </option>
+                </select>
+            </div>          
+        </div>
+
+        <div class="row mb-3">
+            <label for="ItemQuantity" class="col-sm-2 col-form-label">Số lượng</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="ItemQuantity" name="ItemQuantity" [(ngModel)] ="ItemQuantity">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="ItemPrice" class="col-sm-2 col-form-label">Giá bán sản phẩm</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="ItemPrice" name="ItemPrice" [(ngModel)] ="ItemPrice">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="ItemColor" class="col-sm-2 col-form-label">Màu sắc sản phẩm</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="ItemColor" name="ItemColor" [(ngModel)]="ItemColor">
+            </div>
+        </div>
+        
+        <div class="row mb-3" *ngIf="ItemType !== 'Phụ kiện'">
+            <label for="ItemStorage" class="col-sm-2 col-form-label">Dung lượng sản phẩm</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="ItemStorage" name="ItemStorage" [(ngModel)]="ItemStorage">
+            </div>
+        </div>
+
+        <div class="col-12 d-flex justify-content-end">
+            <button type="submit" class="btn">
+                {{ selectedItem ? 'Sửa sản phẩm' : 'Thêm sản phẩm' }}
+            </button>
+          </div>
+    </form>
+
+    <div>
+        <h5 class="text-danger" style="font-size: 20px; margin-top: 10px;">Danh sách sản phẩm</h5>
+        <div class="card p-3 shadow">
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                      <tr style="text-align: center;">
+                        <th scope="col">Hình sản phẩm</th>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Loại</th>
+                        <th scope="col">Màu sắc</th>
+                        <th scope="col">Dung lượng</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Giá bán</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of ItemList" (click)="selectItem(item)" style="text-align: center; cursor: pointer;">
+                        <td><img src="{{item.image}}" alt="" style="height: 100px; width: 100px;"></td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.type}}</td>
+                        <td>{{item.color}}</td>
+                        <td>{{item.storage}}</td>
+                        <td>{{item.quantity}}</td>
+                        <td>{{item.price| number: '1.0-0'}} ₫</td>
+                        <td>
+                            <button class="btn btn-outline-danger" (click)="deleteItem(item)">Xoá</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div> 

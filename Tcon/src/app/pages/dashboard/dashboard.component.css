@@ -1,0 +1,85 @@
+.nav-item{
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.nav-item a{
+  color: #ff4000;
+}
+
+.nav-item a:hover{
+  color: #d04212;
+}
+
+.h2{
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.media-body h1{
+    font-size: 20px;
+}
+.media-body strong{
+    font-weight: 500;
+    font-style: italic;
+}
+
+.media-body p{
+    margin-top: 15px;
+    font-size: 18px;
+}
+.media-body{
+    padding: 10px;
+}
+
+.edit-btn {
+  margin-bottom: 20px;
+  height: 35px;
+  border: none;
+  background: #ff4000;
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 8px;
+  border-radius: 10px;
+  }
+
+.edit-btn:hover{
+  background-color: #d04212;
+}
+  
+  .edit-form {
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .edit-form .label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .edit-form input {
+    margin-bottom: 15px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .edit-form button {
+    padding: 8px 16px;
+    background-color: #ff4000;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .edit-form button:hover {
+    background-color: #d04212;
+  }

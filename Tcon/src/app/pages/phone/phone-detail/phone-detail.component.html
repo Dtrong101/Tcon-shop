@@ -1,0 +1,879 @@
+ <div class="container" *ngIf="item"> <!--(get id from phone) -->
+  <div class="row">
+    <div class="col-md-8">
+      <div class="product-detail">
+        <div class="product-images">
+          <img [src]="item.image" alt="Product Image" class="main-image" />
+          <div class="thumbnail-images">
+            <a
+              *ngFor="let thumbnail of thumbnailImages"
+              [routerLink]="['/phone', thumbnail.id]"
+            >
+              <img [src]="thumbnail.image" alt="Thumbnail" class="thumbnail" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="product-info">
+        <h2>{{ item.name }}</h2>
+        <p>
+          <span>Price:</span> {{ item.price | number: '1.0-0'}} ₫
+        </p>
+        <p><span>Type:</span> {{ item.type }}</p>
+        <p><span>Dung lượng:</span> {{ item.storage }}</p>
+        <p><span>Màu sắc:</span> {{ item.color }}</p>
+        <div class="cart">
+          <button (click)="addToCart(item)" routerLink="/cart" class="order-btn">Mua ngay</button>
+          <button (click)="addToCart(item)" class="cart-btn">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row"  >
+      <div class="col-md-8">
+        <div class="product-content" *ngIf="item">
+          <ng-container *ngIf="item.name === 'iPhone 14 Pro Max'">
+            <h2>Đánh giá chi tiết iPhone 14 Pro Max</h2>
+            <p class="content" *ngIf="!showFullContent">
+              iPhone 14 Pro Max đem đến những trải nghiệm không thể tìm thấy
+              trên mọi thế hệ iPhone trước đó với màu Tím Deep Purple sang
+              trọng, camera 48MP lần đầu xuất hiện, chip A16 Bionic và màn hình
+              “viên thuốc” Dynamic Island linh hoạt, nịnh mắt.
+            </p>
+            <img
+              src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-pro-max-1.jpg"
+              alt=""
+            />
+            <div *ngIf="showFullContent" class="show-content">
+              <h3>Đỉnh cao thiết kế sang trọng và bền bỉ</h3>
+              <p class="content">
+                Rất khó để tìm ra chiếc điện thoại nào sang trọng như iPhone 14
+                Pro Max trên thị trường. Thừa hưởng thiết kế vát phẳng từ thế hệ
+                trước, thủ lĩnh iPhone 14 series khoác lên bộ khung vỏ thép, đầm
+                tay và chắc chắn. Bạn sẽ lập tức bị lôi cuốn bởi vẻ ngoài cao
+                cấp với thân máy bóng bẩy của sản phẩm. <br />
+                Nhờ kỹ nghệ hoàn thiện xuất sắc, thiết kế iPhone 14 Pro Max đạt
+                chuẩn chống nước IP68 cao nhất có thể trên smartphone. Apple đã
+                phủ lên màn hình thiết bị chất liệu kính Ceramic Shield siêu
+                bền, tối ưu khả năng kháng lực và chống xước cực tốt suốt vòng
+                đời sử dụng.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-pro-max-2.jpg"
+                alt=""
+              />
+              <p class="content">
+                iPhone 14 Pro Max có kiểu dáng tương tự người tiền nhiệm với một
+                vẻ ngoài sang trọng làm từ khung thép không gỉ kết hợp hai mặt
+                cứng cường lực phủ gốm siêu bền. Tuy nhiên do cụm camera được
+                nâng cấp lớn hơn, nên bạn sẽ không thể sử dụng chung ốp lưng với
+                dòng iPhone 13 Pro trước đây. Tất nhiên iPhone 14 Pro và iPhone
+                14 Pro Max sẽ có khả năng chống nước/chống bụi chuẩn IP68.
+              </p>
+              <h3>Lựa chọn giữa các màu sắc cao cấp</h3>
+              <p class="content">
+                Với iPhone 14 Pro Max, bạn sẽ có bốn lựa chọn màu sắc sáng giá
+                gồm Tím (Deep Purple), Vàng (Gold), Bạc (Silver) và Đen không
+                gian (Space Black). Riêng phiên bản Tím đã được căn chỉnh với
+                tone màu đậm, rất đẹp, nền nã và phát huy được tinh thần sang
+                trọng vốn có của thiết bị.
+              </p>
+              <p class="content">
+                Bên cạnh những màu quen thuộc, khá bất ngờ khi màu sắc chủ đạo
+                của dòng iPhone 14 Pro Max năm nay sẽ là màu Tím Deep Purple.
+                Với một sản phẩm có thiết kế tinh xảo như iPhone 14 Pro Max thì
+                màu tím sẽ trở nên rất đẹp, bóng bẩy và sang trọng. iPhone 14
+                Pro Max mang hơi hướng sang trọng, tinh tế với 4 phiên bản màu
+                sắc
+              </p>
+              <h3>Màn hình Dynamic Island lần đầu xuất hiện</h3>
+              <p class="content">
+                Lần đầu tiên sau nhiều năm, Apple đã nói lời “tạm biệt” với phần
+                màn hình “tai thỏ” mặt trước. Bạn sẽ có màn hình không gian hiển
+                thị nhiều hơn khi iPhone 14 Pro Max được thu hẹp phần cảm biến
+                Face ID và camera trước gọn nhất có thể, thành hình dạng như một
+                viên thuốc (hay chữ i). <br />
+                Apple gọi phần này là Dynamic Island vì nó thực sự thú vị. Nhờ
+                màn hình OLED, Apple đã tùy biến khu vực “viên thuốc” thành các
+                biểu tượng gọi tắt, các thông báo của ứng dụng với hiệu ứng
+                chuyển cảnh mượt mà và liền mạch. Bạn chắc chắn sẽ cảm nhận được
+                sự thú vị của Dynamic Island khi sử dụng iPhone 14 Pro Max trực
+                tiếp.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-pro-max-9.jpg"
+                alt=""
+              />
+              <p class="content">
+                iPhone 14 Pro Max sở hữu màn hình 6.7 inch LTPO hiện đại, có khả
+                năng điều tiết tần số quét tự động từ 1Hz đến 120Hz linh hoạt
+                nhằm tăng độ mượt mà và vẫn tiết kiệm pin. Điểm nhấn trên màn
+                hình là việc chuyển từ phong cách tai thỏ sang dạng “viên thuốc”
+                có phần cắt nhỏ nhắn hơn nhiều. <br />
+                Đặc biệt, Apple còn tận dụng không gian này để tạo hiệu ứng biến
+                hóa linh hoạt tùy theo tác vụ bạn trải nghiệm. Với tên gọi
+                Dynamic Island, cấu trúc “viên thuốc” trên màn hình iPhone 14
+                Pro Max giờ đây trở thành điểm nhấn đáng trải nghiệm nhất.
+              </p>
+              <h3>Tính năng Always On đã sẵn sàng</h3>
+              <p class="content">
+                Tận dụng đặc tính của công nghệ OLED, iPhone 14 Pro Max đem đến
+                chế độ Always On Display, cho phép người dùng xem những thông
+                tin cần thiết như thông báo, thời gian, ngày tháng, thời tiết
+                hay nhiệt độ sau khi màn hình chuyển qua trạng thái nghỉ. <br />
+                Giờ đây, người dùng không cần phải chạm vào thiết bị khi màn
+                hình iPhone 14 Pro Max đang tắt mà vẫn có thể nắm được những
+                thông tin cần thiết. Đáng nói hơn, Always On Display sẽ tự tắt
+                khi úp màn hình xuống hoặc đặt máy trong túi quần, túi áo nhằm
+                tiết kiệm pin.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-pro-max-a.jpg"
+                alt=""
+              />
+              <p class="content">
+                Màn hình bộ đôi iPhone 14 Pro Max cực đỉnh với tấm nền OLED
+                Super Retina XDR, mật độ điểm ảnh 460 ppi hỗ trợ loạt tính năng
+                hàng đầu như HDR, True Tone, Wide Color (P3). Màn hình iPhone 14
+                Pro có kích thước 6,1 inch độ phân giải 2556 x 1179 pixels,
+                trong khi đó iPhone 14 Pro Max là 6,7 inch độ phân giải 2796 x
+                1290 pixels. Độ tương phản và độ sáng cũng rất ấn tượng với độ
+                tương phản 2.000.000:1 và độ sáng tối đa lên tới 2000 nits ở
+                điều kiện ngoài trời. Ngoài ra màn hình này cũng hỗ trợ tần số
+                làm mới 120Hz và công nghệ ProMotion, có thể thay đổi tần số từ
+                1-120 Hz để vừa mượt mà, vừa tiết kiệm pin.
+              </p>
+              <h3>Super Retina XDR rực rỡ và mãn nhãn</h3>
+              <p class="content">
+                Dù trong ánh nắng chói chang nhất, màn hình iPhone 14 Pro Max
+                vẫn luôn sắc nét và chân thực. Tấm nền Super Retina XDR với độ
+                sáng 2.000 nits sáng gấp đôi trước đây khiến khả năng hiển thị
+                của sản phẩm vượt trội bất cứ mẫu iPhone nào trong lịch sử.
+                <br />
+                Apple tập trung rất nhiều vào trải nghiệm nội dung HDR khi đẩy
+                độ sáng tối đa lên mức 1.600 nits - ngang ngửa với màn hình Pro
+                Display XDR chuyên dụng của hãng. Bạn sẽ cảm nhận rõ ràng tính
+                chân thực từ mỗi hình ảnh, thước phim.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-pro-max-l.jpg"
+                alt=""
+              />
+              <h3>Camera 48MP lần đầu góp mặt</h3>
+              <p class="content">
+                iPhone 14 Pro Max được ưu ái trang bị camera chính 48MP hoàn
+                toàn mới, với cảm biến quad-pixel tân tiến. Việc nâng cấp độ
+                phân giải gấp bốn lần iPhone 13 Pro Max và sử dụng cảm biến ảnh
+                lớn hơn 65% giúp hình ảnh trở nên sắc nét chưa từng thấy. <br />
+                Cảm biến mới sẽ gộp mỗi nhóm bốn pixel thành một pixel lớn, từ
+                đó gia tăng khả năng thu sáng gấp bốn lần và tạo ra những khuôn
+                hình sắc nét vượt xa những chiếc điện thoại camera 12MP thông
+                thường trên thị trường. Nhờ vậy bạn sẽ có ảnh chi tiết hơn tới 4
+                lần trong khi chỉnh sửa ảnh ProRAW để thoải mái crop ảnh mà
+                không lo giảm chất lượng. <br />
+                Kích thước cảm biến cũng lớn hơn tới 65% so với iPhone 13 Pro,
+                tăng khả năng chụp ảnh thiếu sáng. Trong điều kiện bình thường,
+                Apple sẽ ghép 4 điểm ảnh làm 1 để bức ảnh cuối cùng vẫn có độ
+                phân giải 12MP nhưng độ sáng và độ chi tiết vượt trội.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-pro-max-c.jpg"
+                alt=""
+              />
+              <p class="content">
+                Camera Tele cũng được nâng cấp khi có chất lượng quang học gấp
+                đôi thế hệ trước, có thể thu phóng 2x và 3x rõ nét. Camera
+                iPhone 14 Pro tập trung chủ yếu vào chụp ảnh thiếu sáng khi
+                Apple cho biết camera góc siêu rộng Ultra Wide chụp ảnh thiếu
+                sáng tốt hơn 3 lần, 2 camera còn lại tốt hơn gấp đôi so với thế
+                hệ iPhone 13 Pro.
+                <br />
+                iPhone 14 Pro Max tiếp tục thể hiện sự chuyên nghiệp khi quay
+                video với khả năng quay video 4K HDR 24fps hoặc 30fps chuẩn điện
+                ảnh. Ấn tượng hơn là tính năng quay chuyển động không thua kém
+                gì GoPro. <br />
+                Về camera trước TrueDepth, bạn sẽ có tính năng tự động lấy nét
+                và khẩu độ lớn hơn. Những bức ảnh selfie sẽ rõ nét, lấy nét
+                chính xác hơn và chụp thiếu sáng tốt hơn gấp đôi.
+              </p>
+              <h3>Nâng tầm quay chụp lên đẳng cấp chuyên nghiệp</h3>
+              <p class="content">
+                Chưa khi nào trải nghiệm quay chụp trên iPhone chuyên nghiệp đến
+                thế! iPhone 14 Pro Max đem đến rất nhiều tính năng hỗ trợ chuyên
+                sâu cho người dùng. Trải nghiệm chụp ProRAW ở độ phân giải 48MP
+                sẽ giúp bạn tối ưu hóa độ chi tiết của hình ảnh và khả năng can
+                thiệp hậu kỳ linh hoạt hơn nhiều, dễ dàng làm hài lòng những
+                người dùng khó tính nhất.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-pro-max-d.jpg"
+                alt=""
+              />
+              <h3>Thu phóng tuyệt hảo nhờ camera tele 2X</h3>
+              <p class="content">
+                Trên mặt lưng iPhone 14 Pro Max, bạn sẽ tìm thấy một camera tele
+                2X tiêu cự quy đổi 48mm, đạt khẩu độ F/1.78 và tích hợp kèm cảm
+                biến chống rung OIS thế hệ hai. Sự giúp sức của camera đặc biệt
+                này giúp iPhone 14 Pro Max đem đến các tùy chọn zoom đa dạng như
+                0.5x, 1x, 2x và 3x.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-pro-max-e.jpg"
+                alt=""
+              />
+              <h3>Khả năng chụp ảnh thiếu sáng cực kỳ xuất sắc</h3>
+              <p class="content">
+                Cả ba camera của iPhone 14 Pro Max đều được tối ưu để nâng cao
+                khả năng chụp ảnh thiếu sáng so với iPhone cũ. Cụ thể, camera
+                Ultra Wide có thể chụp ảnh thiếu sáng tốt hơn gấp ba lần, trong
+                khi camera chính và camera tele chụp thiếu sáng tốt gấp đôi.
+                <br />
+                Sự giúp sức của con chip A16 Bionic siêu mạnh góp phần nâng cao
+                chất lượng ảnh chụp nhờ thực hiện tới 4 ngàn tỉ tác vụ hậu kỳ
+                trước khi tạo ra bức ảnh thành phẩm cuối cùng - một con số cực
+                kỳ ấn tượng.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-pro-max-i.jpg"
+                alt=""
+              />
+              <h3>Chip A16 Bionic với 16 tỷ bóng bán dẫn</h3>
+              <p class="content">
+                Đứng sau mọi hoạt động của iPhone 14 Pro Max là chip A16 Bionic.
+                Con chip đỉnh cao thế hệ mới tập hợp tới 16 tỷ bóng bán dẫn, bao
+                gồm 6 lõi CPU và 5 lõi GPU giúp sản phẩm xử lý được khối lượng
+                thông tin khổng lồ một cách chuyên nghiệp. Ngoài ra, A16 Bionic
+                giúp thiết bị tiết kiệm pin tối đa, thực hiện các tác vụ đồ họa
+                phức tạp để chạy mượt mọi tựa game. <br />
+                Các lõi Neural Engine trên A16 Bionic thực hiện 17 nghìn tỷ phép
+                tính mỗi giây sẽ phân tích từng pixel trong ảnh và tối ưu hóa
+                nhằm cho ra những bức ảnh chất lượng nhất.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-pro-max-b.jpg"
+                alt=""
+              />
+              <h3>Pin iPhone 14 Pro Max sẽ khiến bạn kinh ngạc</h3>
+              <p class="content">
+                iPhone 14 Pro Max sẽ đem đến trải nghiệm pin khiến bạn thực sự
+                kinh ngạc. Chỉ với một lần sạc, thủ lĩnh dòng iPhone 14 có thể
+                phát video liên tục trong 29 tiếng không nghỉ. Ngoài ra, công
+                nghệ sạc không dây đã được nâng cấp để rút ngắn thời gian chờ
+                đợi khi kết hợp cùng bộ sạc MagSafe.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-pro-max-m.jpg"
+                alt=""
+              />
+            </div>
+          </ng-container>
+          <ng-container *ngIf="item.name === 'iPhone 14 Pro'">
+            <h2>Đánh giá chi tiết iPhone 14 Pro</h2>
+            <p class="content" *ngIf="!showFullContent">
+              iPhone 14 Pro hội tụ những tính năng đẳng cấp nhất với thiết kế
+              mới, bộ vi xử lý Apple A16 Bionic với sức mạnh chưa từng thấy,
+              camera 48MP nâng cấp vượt trội, màn hình Always-On đầy thú vị và
+              hơn thế nữa.
+            </p>
+            <img
+              src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/ThienNDDD/iPhone-14-Pro.jpg"
+              alt=""
+            />
+            <div *ngIf="showFullContent" class="show-content">
+              <h3>Thiết kế mới với Dynamic Island</h3>
+              <p class="content">
+                Sau 5 năm, Apple đã nói lời tạm biệt với thiết kế màn hình “tai
+                thỏ” để giới thiệu notch Dynamic Island - đây là một sự thay đổi
+                ngoạn mục. iPhone 14 Pro thu hẹp phần cảm biến Face ID và camera
+                trước thành hình dạng như một viên thuốc. Khu vực này sẽ tùy
+                biến và làm nổi bật khi có cuộc gọi đến, các thông báo của ứng
+                dụng, âm nhạc và hơn thế nữa. Bạn chắc chắn sẽ cảm nhận được sự
+                thú vị của Dynamic Island khi sử dụng iPhone 14 Pro.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/ThienNDDD/iPhone-14-Pro-1.jpg"
+                alt=""
+              />
+              <h3>Thép không gỉ siêu bền, cực sang trọng</h3>
+              <p class="content">
+                iPhone 14 Pro có kiểu dáng tương tự người tiền nhiệm với một vẻ
+                ngoài sang trọng làm từ khung thép không gỉ kết hợp hai mặt cứng
+                cường lực phủ gốm siêu bền. Tất nhiên iPhone 14 Pro sẽ có khả
+                năng chống nước/chống bụi với chuẩn IP68. Tuy nhiên do cụm
+                camera được nâng cấp lớn hơn, nên bạn sẽ không thể sử dụng chung
+                ốp lưng với dòng iPhone 13 Pro trước đây.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/ThienNDDD/iPhone-14-Pro-2.jpg"
+                alt=""
+              />
+              <h3>4 lựa chọn màu sắc với phiên bản màu Tím cực chất</h3>
+              <p class="content">
+                Cũng giống như những gì đã diễn ra cách đây 1 năm, iPhone 14 Pro
+                sẽ có 4 phiên bản màu nhưng nó sẽ có đôi chút khác biệt. Bên
+                cạnh những màu quen thuộc như Đen Space Black, Bạc Silver, Vàng
+                Gold, khá bất ngờ khi màu sắc chủ đạo của iPhone 14 Pro năm nay
+                sẽ là màu Tím Deep Purple. Với việc khoác lên mình thiết kế tinh
+                xảo, iPhone 14 Pro càng trở nên bóng bẩy và lạ mắt hơn khi kết
+                hợp với màu Tím mới này.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/ThienNDDD/iPhone-14-Pro-3.jpg"
+                alt=""
+              />
+              <h3>Hiển thị sắc nét và mượt mà trong từng điểm chạm</h3>
+              <p class="content">
+                Với tấm nền OLED Super Retina XDR, mật độ điểm ảnh 460 ppi cùng
+                việc được hỗ trợ loạt tính năng hàng đầu, iPhone 14 Pro sẽ thể
+                hiện xuất sắc khả năng của mình khi luôn sắc nét cho mọi ánh
+                nhìn. Hơn nữa, kích thước 6.1 inch kết hợp với độ sáng lên đến
+                2000 nits ở điều kiện ngoài trời sẽ giúp cho bạn dễ dàng tương
+                tác hơn với màn hình dù sử dụng bất cứ đâu. Ngoài ra màn hình
+                này cũng hỗ trợ tần số làm mới 120Hz và công nghệ ProMotion, có
+                thể thay đổi tần số từ 1-120Hz để vừa mượt mà, vừa tiết kiệm
+                pin.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/ThienNDDD/iPhone-14-Pro-4.png"
+                alt=""
+              />
+              <h3>Always-On cuối cùng cũng đã đến</h3>
+              <p class="content">
+                Sau thời gian dài chờ đợi, tính năng Màn hình luôn bật
+                (Always-On) đã được giới thiệu cùng với iPhone 14 Pro. Khác với
+                Always-On trên Android với màu đen đơn thuần, màn hình luôn bật
+                trên iPhone vẫn sẽ giữ nguyên màu sắc của màn hình khóa và bạn
+                có thể xem bất cứ khi nào. Khi bạn bỏ điện thoại vào túi hoặc úp
+                màn hình xuống, màn hình sẽ tự động tối đi để tiết kiệm pin.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/ThienNDDD/iPhone-14-Pro-5.jpg"
+                alt=""
+              />
+              <h3>Tùy chỉnh màn hình khóa theo ý thích</h3>
+              <p class="content">
+                Với iOS 16 khi ra mắt, iPhone 14 Pro sẽ có khả năng tùy chỉnh
+                màn hình khóa một cách khá độc đáo mà từ trước đến nay chưa có.
+                Bạn có thể tùy chỉnh Màn hình khóa của mình với các thao tác như
+                xếp một bức ảnh lên biểu tượng đồng hồ, theo dõi hoạt động của
+                bạn và có thể xem được thời lượng pin của các thiết bị được kết
+                nối qua bluetooth…
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/ThienNDDD/iPhone-14-Pro-6.png"
+                alt=""
+              />
+              <h3>Thêm tính năng phát hiện sự cố</h3>
+              <p class="content">
+                Apple cũng đã tích hợp những tính năng phát hiện sự cố ấn tượng
+                lên iPhone 14 Pro, bao gồm tính năng SOS thông qua vệ tinh và
+                phát hiện sự cố tai nạn ô tô. Nếu bạn không có mạng di động hoặc
+                Wi-Fi, iPhone cho phép bạn phát thông báo khẩn cấp qua vệ tinh
+                và nó sẽ phát hiện ra tai nạn ô tô nghiêm trọng để kịp thời
+                thông báo cho liên hệ khẩn cấp của bạn.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/ThienNDDD/iPhone-14-Pro-7.png"
+                alt=""
+              />
+              <h3>Hệ thống camera đậm chất “Pro”</h3>
+              <p class="content">
+                iPhone 14 Pro đã có sự nâng cấp vượt bậc về camera khi camera
+                chính được nâng lên độ phân giải 48MP. Nhờ vậy bạn sẽ có ảnh chi
+                tiết hơn tới 4 lần trong khi chỉnh sửa ảnh ProRAW không lo ảnh
+                bị giảm chất lượng. Kích thước cảm biến cũng lớn hơn tới 65% và
+                tăng khả năng chụp ảnh thiếu sáng.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/ThienNDDD/iPhone-14-Pro-8.png"
+                alt=""
+              />
+              <h3>Chụp ảnh linh hoạt với nhiều chế độ</h3>
+              <p class="content">
+                Chất lượng quang học trên camera tele được tăng lên gấp đôi thế
+                hệ trước, có thể thu phóng 2x và 3x rõ nét. Camera iPhone 14 Pro
+                tập trung chủ yếu vào chụp ảnh thiếu sáng khi camera góc siêu
+                rộng Ultra Wide chụp ảnh thiếu sáng tốt hơn 3 lần, 2 camera còn
+                lại tốt hơn gấp đôi so với thế hệ iPhone 13 Pro.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/ThienNDDD/iPhone-14-Pro-9.jpg"
+                alt=""
+              />
+              <h3>Quay phim với chất lượng đáng kinh ngạc</h3>
+              <p class="content">
+                iPhone 14 Pro tiếp tục thể hiện sự chuyên nghiệp khi quay video
+                với khả năng quay video 4K HDR 24fps hoặc 30fps đạt tiêu chuẩn
+                điện ảnh. Ấn tượng hơn hết chính là chế độ Action, quay chuyển
+                động không thua kém gì GoPro.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/ThienNDDD/iPhone-14-Pro-10.jpg"
+                alt=""
+              />
+              <h3>Selfie cực nét với tính năng AutoFocus</h3>
+              <p class="content">
+                Sau khi đem đến Dynamic Island, iPhone 14 Pro cũng được nâng cấp
+                cho camera trước. Những bức ảnh selfie giờ đây sẽ cực kỳ rõ nét,
+                lấy nét chính xác hơn với AutoFocus và chụp thiếu sáng tốt hơn
+                gấp đôi, giúp bạn ghi lại mọi khoảnh khắc sống động cùng bạn bè
+                và người thân.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/ThienNDDD/iPhone-14-Pro-11.jpg"
+                alt=""
+              />
+              <h3>Apple A16 Bionic - kẻ thách thức hiệu năng</h3>
+              <p class="content">
+                iPhone 14 Pro đã không khiến người dùng phải thất vọng với bộ vi
+                xử lý Apple A16 Bionic mới. CPU này có tới 16 tỷ bóng bán dẫn,
+                có 6 lõi nhanh hơn, sản xuất trên tiến trình 4nm, Neural Engine
+                thực hiện 17 nghìn tỷ hoạt động mỗi giây, GPU 5 lõi thêm 50%
+                băng thông bộ nhớ, cảm biến xử lý hình ảnh ISP được nâng cấp và
+                rất tiết kiệm điện. Apple A16 Bionic mạnh hơn tới 40% khi so
+                sánh với các đối thủ mới được ra mắt gần đây. Quá khủng khiếp!
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/ThienNDDD/iPhone-14-Pro-12.png"
+                alt=""
+              />
+              <h3>Thời lượng pin cả ngày</h3>
+              <p class="content">
+                Dù tích hợp thêm rất nhiều tính năng mới nhưng thời lượng pin
+                của iPhone 14 Pro vẫn rất tuyệt vời. iPhone 14 Pro có thể xem
+                video trong tới 29 giờ liên tục, tương đương với khoảng 2 ngày
+                sử dụng bình thường. Tất nhiên rằng chiếc iPhone này cũng sẽ hỗ
+                trợ với bộ sạc MagSafe, giúp quá trình sạc không dây được nhanh
+                hơn.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/ThienNDDD/iPhone-14-Pro-13.jpg"
+                alt=""
+              />
+            </div>
+          </ng-container>
+          <ng-container *ngIf="item.name === 'iPhone 14 Plus'">
+            <h2>Đánh giá chi tiết iPhone 14 Plus</h2>
+            <p class="content" *ngIf="!showFullContent">
+              Sự hấp dẫn của chiếc iPhone thế hệ mới 2022 với màn hình lớn, pin
+              xuất sắc nhất từ trước đến nay, chụp đêm ấn tượng và loạt công
+              nghệ đỉnh cao, điện thoại iPhone 14 Plus mang người dùng vào những
+              trải nghiệm di động tiên tiến, sẵn sàng cho cuộc sống năng động,
+              thông minh và tiện lợi.
+            </p>
+            <img
+              src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/02/iPhone-14-Plus.jpg"
+              alt=""
+            />
+            <div *ngIf="showFullContent" class="show-content">
+              <h3>Thiết kế cao cấp và bền bỉ</h3>
+              <p class="content">
+                Phone 14 Plus được hoàn thiện cao cấp với khung nhôm và kính
+                Ceramic Shield chắc chắn có khả năng chống trầy xước, va đập cực
+                tốt. Kết hợp đó là thiết kế vuông vức hợp xu hướng, cho tổng thể
+                hiện đại. Đồng thời, bạn cũng hoàn toàn yên tâm sử dụng điện
+                thoại trong nhiều điều kiện môi trường khi iPhone 14 Plus có sự
+                góp mặt của chuẩn chống nước/ bụi IP68, có thể ngâm nước ở độ
+                sâu tối đa 6m trong vòng 30 phút.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/02/Thiet-ke-iPhone-14-Plus(1).jpg"
+                alt=""
+              />
+              <h3>Nét đẹp từ sắc màu thời thượng</h3>
+              <p class="content">
+                Mang tới những sắc màu trendy nhưng không kém phần sang trọng và
+                tinh tế, iPhone 14 Plus thể hiện nét đẹp công nghệ ấn tượng, dễ
+                dàng chinh phục bất cứ người dùng nào. Trong đó hai phiên bản
+                màu mới là xanh dương và tím, bên cạnh các màu được yêu thích
+                trước đây là trắng, đen và đỏ. Năm màu sắc - năm cá tính, iPhone
+                14 Plus là tuyên ngôn sắc màu, giúp bạn thể hiện phong cách mang
+                đậm dấu ấn cá nhân. Hãy chọn màu yêu thích và sẵn sàng khoe cá
+                tính.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/02/Mac-sac-iPhone-14-Plus.jpg"
+                alt=""
+              />
+              <h3>Chiếc iPhone màn hình lớn nhất</h3>
+              <p class="content">
+                Tận hưởng chiếc iPhone màn hình lớn nhất 6.7 inch, nhiều hơn 21%
+                so với bản tiêu chuẩn iPhone 14, smartphone cho mọi thao tác
+                diễn ra dễ dàng và thoải mái. <br />
+                Trải nghiệm còn ấn tượng và sắc nét khi đây là màn hình Super
+                Retina XDR, giúp bạn chìm đắm vào không gian giải trí đỉnh cao,
+                các bộ phim bom tấn mãn nhãn và những trận game bùng nổ, đáp ứng
+                trọn vẹn mọi nhu cầu của người dùng. Thiết kế còn chỉn chu với
+                màn hình siêu mỏng và gọn gàng. Công nghệ True Tone cũng giúp
+                bảo vệ mắt khi có khả năng điều chỉnh màn hình theo ánh sáng của
+                môi trường hiện tại.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/02/Man-hinh-iPhone-14-Plus.jpg"
+                alt=""
+              />
+              <h3>Thời lượng pin tốt nhất từ trước đến nay</h3>
+              <p class="content">
+                iPhone 14 Plus có viên pin tốt nhất từ trước đến nay, cho bạn sử
+                dụng thoải mái. Bạn sẽ không lắng lo về việc cạn pin, mất kết
+                nối giữa ngày. Mọi trải nghiệm đều liền mạch, nâng cao hiệu suất
+                công việc lẫn học tập cho bạn.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/02/Pin-iPhone-14-Plus.jpg"
+                alt=""
+              />
+              <h3>Chụp ảnh đêm xuất sắc</h3>
+              <p class="content">
+                Camera 12MP + 12MP trên iPhone 14 Plus với cải tiến sáng giá về
+                khả năng chụp thiếu sáng, cho phép bạn sở hữu những tấm ảnh sắc
+                nét, rõ ràng và chân thực trong mọi điều kiện.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/02/Camera-iPhone-14-Plus.jpg"
+                alt=""
+              />
+              <p class="content">
+                Theo đó, camera chính có khẩu độ f/1.5, kích thước điểm ảnh 1.9
+                micromet và có chống rung quang học OIS, cho phép thu sáng hơn
+                49%. Đối với camera góc siêu rộng là khả năng chụp thiếu sáng
+                hơn gấp 2 lần.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/02/Camera-iPhone-14-Plus-8(2).jpg"
+                alt=""
+              />
+              <p class="content">
+                Chưa dừng lại, iPhone 14 Plus với công nghệ Photonic Engine cho
+                phép Deep Fusion, cải thiện hiệu suất ánh sáng và tái tạo màu
+                chuẩn xác bằng cách kết hợp các pixel tốt nhất từ nhiều lần phơi
+                sáng, giúp các tấm ảnh đạt được chi tiết tốt nhất.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/02/Camera-iPhone-14-Plus-1(2).jpg"
+                alt=""
+              />
+              <p class="content">
+                Đồng thời, iPhone 14 Plus còn có Chế độ ban đêm tự động sẽ tự
+                động bật khi chụp các ảnh vào buổi tối khi cần thiết, đảm bảo
+                ảnh đẹp nhất có thể. <br />
+                Sự kết hợp hoàn hảo của bộ đôi camera vượt trội và công nghệ
+                tiên tiến hàng đầu, iPhone 14 Plus sẽ giúp bạn có tấm ảnh xuất
+                sắc dù ở bất kỳ đâu, từ tấm ảnh trong những buổi party sôi động
+                hay đường phố về đêm huyền ảo.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/02/Camera-iPhone-14-Plus-5.jpg"
+                alt=""
+              />
+              <h3>Smart HDR 4 - bạn và bạn bè đều rạng ngời</h3>
+              <p class="content">
+                Với Smart HDR 4, iPhone 14 Plus có thể nhận diện tối đa bốn
+                người trong ảnh để lấy nét và tự động điều chỉnh độ tương phản,
+                tông màu da cho từng người. Bạn và bạn của bạn đều sẽ rạng ngời
+                trong khung hình.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/02/Camera-iPhone-14-Plus-6(1).jpg"
+                alt=""
+              />
+              <h3>Thêm tính năng phát hiện sự cố</h3>
+              <p class="content">
+                Apple cũng đã tích hợp những tính năng phát hiện sự cố ấn tượng
+                lên iPhone 14 Pro, bao gồm tính năng SOS thông qua vệ tinh và
+                phát hiện sự cố tai nạn ô tô. Nếu bạn không có mạng di động hoặc
+                Wi-Fi, iPhone cho phép bạn phát thông báo khẩn cấp qua vệ tinh
+                và nó sẽ phát hiện ra tai nạn ô tô nghiêm trọng để kịp thời
+                thông báo cho liên hệ khẩn cấp của bạn.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/ThienNDDD/iPhone-14-Pro-7.png"
+                alt=""
+              />
+              <h3>Ảnh chân dung chuyên nghiệp</h3>
+              <p class="content">
+                Chế độ chân dung trên iPhone 14 Plus không chỉ giúp bạn tỏa sáng
+                và là tâm điểm của khung hình mà ở còn mang tới chất ảnh chuyên
+                nghiệp. Theo đó, iPhone 14 Plus có khả năng xóa phông chuẩn xác,
+                làm mờ hậu cảnh nghệ thuật.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/02/Camera-iPhone-14-Plus-7.jpg"
+                alt=""
+              />
+              <h3>Thước phim mượt mà, chuyên nghiệp trong tầm tay</h3>
+              <p class="content">
+                Thỏa sức sáng tạo nội dung video trên iPhone 14 Plus với chống
+                rung OIS và tính năng Action Mode. Điện thoại cho những thước
+                phim chuyên nghiệp sắc nét, dù bạn đang di chuyển hay quay những
+                khung hình “nhọc nhằn” nhiều thao tác. <br />
+                Để có được điều này, sự có mặt của OIS sẽ cố định khung hình và
+                Action Mode tăng cường cơ chế chống rung. Từ đó, iPhone 14 Plus
+                dễ dàng hỗ trợ bạn thực hiện những video yêu thích một cách
+                chuyên nghiệp, tiện lợi mà không cần đến các thiết bị cồng kềnh
+                khác.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/02/Camera-iPhone-14-Plus-10.jpg"
+                alt=""
+              />
+              <p class="content">
+                Không những vậy, Chế độ điện ảnh còn cho phép tự động chuyển
+                tiêu điểm, lấy nét chủ thể quan trọng nhất trong một khung cảnh.
+                Có thể nói, mọi chuyển động của bạn đều được iPhone 14 Plus hiểu
+                rõ để mang tới video ưng ý, mà không khiến bạn bận tâm quá nhiều
+                để chọn lấy nét từng chủ thể cho từng khung hình. Đặc biệt, bạn
+                cũng có thể quay video 4K ở tốc độ 24 khung hình/giây - tốc độ
+                khung hình chuẩn của các các nhà làm phim.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/02/Camera-iPhone-14-Plus-9.jpg"
+                alt=""
+              />
+              <h3>Chụp selfie hoàn hảo</h3>
+              <p class="content">
+                Dù chụp cận cảnh hay chụp cùng mọi người, dù chụp đủ sáng hay
+                thiếu sáng, iPhone 14 Plus đều mang tới tấm ảnh selfie rạng ngời
+                và sắc nét. Để làm được điều này, Apple đã sử dụng camera trước
+                TrueDepth mới, tích hợp tính năng Autofocus (tự động lấy nét) và
+                khẩu độ lớn (f/1.9) cho khả năng thu sáng và chi tiết nhiều hơn.
+                Theo đó, khả năng chụp thiếu sáng đã được tốt hơn, cụ thể là
+                hiệu suất thu sáng tốt hơn 38%. Từ đó, bạn sẽ sở hữu tấm ảnh
+                selfie rạng rỡ với nhiều chi tiết, ít nhiễu và dễ dàng hậu kì.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/02/Camera-iPhone-14-Plus-11.jpg"
+                alt=""
+              />
+              <h3>Selfie cực nét với tính năng AutoFocus</h3>
+              <p class="content">
+                Sau khi đem đến Dynamic Island, iPhone 14 Pro cũng được nâng cấp
+                cho camera trước. Những bức ảnh selfie giờ đây sẽ cực kỳ rõ nét,
+                lấy nét chính xác hơn với AutoFocus và chụp thiếu sáng tốt hơn
+                gấp đôi, giúp bạn ghi lại mọi khoảnh khắc sống động cùng bạn bè
+                và người thân.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/ThienNDDD/iPhone-14-Pro-11.jpg"
+                alt=""
+              />
+              <p class="content">
+                Camera TrueDepth cũng hỗ trợ FaceID, giúp mở khóa khuôn mặt
+                nhanh chóng và an toàn nhất trên smartphone, giúp bạn trải
+                nghiệm điện thoại tiện lợi nhất.
+              </p>
+              <h3>Nội lực cực kì mạnh mẽ</h3>
+              <p class="content">
+                iPhone 14 Plus sở hữu con chip siêu cấp Apple A15 Bionic, cho
+                sức mạnh vượt trội, dễ dàng xử lý mọi tác vụ. Khả năng đồ họa ấn
+                tượng hơn khi A15 Bionic trên iPhone 14 Plus có 5 lõi GPU, bản
+                cũ trước đây là 4 lõi GPU. Tận hưởng những màn game mãn nhãn với
+                đồ họa tốt hay các ứng AR trở nên siêu mượt hơn, bạn sẽ thấy sự
+                khác biệt trên thế hệ iPhone 14. Đồng thời, Apple còn tối ưu
+                chip để tản nhiệt tốt hơn, giúp bạn sử dụng thoải mái trong thời
+                gian dài.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/02/hieu-nang-iPhone-14-Plus.jpg"
+                alt=""
+              />
+            </div>
+          </ng-container>
+          <ng-container *ngIf="item.name === 'iPhone 14'">
+            <h2>Đánh giá chi tiết iPhone 14</h2>
+            <p class="content" *ngIf="!showFullContent">
+              Khoác lên kiểu dáng đặc trưng của dòng điện thoại iPhone, phiên
+              bản iPhone 14 được cải tiến mạnh ở thời lượng pin và tập trung
+              nâng cấp mạnh về camera nhằm đem đến những thước phim, khuôn hình
+              đầy chất nghệ thuật và đạt chuẩn điện ảnh.
+            </p>
+            <div *ngIf="showFullContent">
+              <h3>Thiết kế đầy bản sắc, gọn gàng và thân thiện</h3>
+              <p class="content">
+                Trên iPhone 14, bạn sẽ tìm thấy một kiểu dáng mang đậm bản sắc
+                Apple với thân máy được hoàn thiện tỉ mỉ, chắc chắn mà vẫn nhẹ
+                nhàng. Loại nhôm cấu tạo nên khung vỏ iPhone 14 được tuyển chọn
+                kỹ lưỡng và là nguyên liệu cao cấp được ứng dụng phổ biến trong
+                ngành hàng không.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-b.jpg"
+                alt=""
+              />
+              <p class="content">
+                Kích cỡ 6.1 inch giúp sản phẩm trở nên gọn gàng và thân thiện
+                hơn khi cầm nắm. Cho phép người dùng thao tác trên toàn không
+                gian hiển thị chỉ với một tay. Điện thoại iPhone 14 có khả năng
+                chống nước IP68, do đó bạn không cần lo lắng về những sự cố liên
+                quan đến nước khi sử dụng thiết bị.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-8.jpg"
+                alt=""
+              />
+              <p class="content">
+                iPhone 14 giữ nguyên phần thiết kế cũ của iPhone 13 với notch
+                “tai thỏ”. Tuy nhiên, phần “notch” đã được tối ưu mỏng so với
+                tiền nhiệm và tỷ lệ khung hình cao hơn một chút. Điện thoại sử
+                dụng tấm nền OLED với độ sáng 1.200nits và tần số quét 60Hz. Máy
+                được hoàn thiện từ khung nhôm và mặt kính Ceramic Shiled.
+              </p>
+              <h3>Bộ màu sắc trẻ trung, đậm chất thanh lịch</h3>
+              <p class="content">
+                iPhone 14 đem đến những tùy chọn màu sắc đầy sức sống gồm: Xanh
+                dương, Đen, Trắng, Đỏ và Tím. Tất cả đều được căn chỉnh theo hơi
+                hướng trẻ trung, trang nhã. Trong lần trở lại này trên iPhone
+                14, sắc Tím đã được tối ưu nhẹ nhàng hơn, thanh lịch hơn, cao
+                cấp hơn, còn biến thể Xanh dương cũng trở nên nền nã và mang lại
+                cảm nhận tinh tế trong kết cấu thẩm mỹ.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-c.jpg"
+                alt=""
+              />
+              <h3>Nâng cấp ấn tượng về thời lượng pin</h3>
+              <p class="content">
+                Chủ nhân của iPhone 14 sẽ thoải mái tận hưởng trải nghiệm pin
+                tuyệt vời mà sản phẩm đem lại. Những cải tiến mà Apple thực hiện
+                trên cả phần cứng và phần mềm giúp iPhone 14 có thể phát video
+                trong 20 giờ liên tục không nghỉ. Đồng thời, sản phẩm còn được
+                cải tiến tính năng sạc không dây nhằm tăng tốc độ nạp năng lượng
+                khi kết hợp cùng bộ sạc MagSafe.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-2.jpg"
+                alt=""
+              />
+              <h3>Màn hình OLED tuyệt sắc, mặt kính Ceramic Shield siêu bền</h3>
+              <p class="content">
+                Ở mặt trước, iPhone 14 sử dụng màn hình 6.1 inch với cách thiết
+                kế vốn đã quen thuộc với người dùng iPhone trong nửa thập kỷ
+                nay. Màn hình này sử dụng tấm nền OLED đặc biệt, được tinh chỉnh
+                bởi đội ngũ kỹ sư Apple để đạt độ sáng tối đa là 1.200 nits, tần
+                số quét 60Hz và độ tương phản 2.000.000:1 ấn tượng. <br />
+                Những công nghệ hỗ trợ hiển thị như True Tone, Haptic Touch và
+                Wide Color Gamut sẽ giúp iPhone 14 thể hiện các sắc thái hiển
+                thị chân thực và mãn nhãn. Đặc biệt, mặt kính Ceramic Shield sẽ
+                phủ lên toàn bộ màn hình iPhone 14, gia tăng độ bền và giúp
+                chống xước tốt hơn nhiều.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-1.jpg"
+                alt=""
+              />
+              <h3>Camera thách thức bối cảnh ánh sáng</h3>
+              <p class="content">
+                CHệ thống camera iPhone 14 bao gồm camera chính 12MP F/1.5, kết
+                hợp cùng camera góc siêu rộng 120 độ F/2.4. Trong đó, camera
+                chính với khẩu độ lớn giúp gia tăng khả năng thu sáng thêm 49%,
+                lưu giữ được nhiều dữ liệu hình ảnh để tạo nên các khuôn hình
+                thành phẩm với màu sắc tươi tắn, sống động và đẹp mắt dù trong
+                điều kiện ánh sáng nào đi nữa. <br />
+                Đến thế hệ iPhone 14, camera góc siêu rộng đã được nâng cấp để
+                bắt được nhiều chi tiết trong bối cảnh. Khi kích hoạt chế độ
+                chụp đêm, sản phẩm sẽ khiến bạn bất ngờ bởi những khuôn hình rõ
+                ràng và chân thực. Chế độ phơi sáng trên iPhone 14 được tinh
+                chỉnh nhanh gấp đôi, giảm bớt thời gian chờ đợi cũng như gia
+                tăng tính hiệu quả trong thực tế.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-a.jpg"
+                alt=""
+              />
+              <h3>Action Mode quay video chuyển động mượt mà</h3>
+              <p class="content">
+                Việc quay video hành động không còn là thách thức lớn với iPhone
+                14 bởi chế độ Action Mode giúp bắt nét chính xác chủ thể khuôn
+                hình trong trạng thái vận động liên tục. Cầm iPhone 14 trên tay,
+                bạn sẽ có những thước phim thú vị để đăng tải lên các tài khoản
+                mạng xã hội của mình.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-h.jpg"
+                alt=""
+              />
+              <h3>Quay video 4K đầy nghệ thuật với chế độ điện ảnh</h3>
+              <p class="content">
+                Cùng sáng tạo những video đầy tính nghệ thuật chuẩn Hollywood
+                cùng iPhone 14. Chế độ điện ảnh sẽ tự bắt nét vào chủ thể quan
+                trọng nhất trong khuôn hình một cách thông minh. Giờ đây, bạn có
+                thể quay video 4K 24FPS siêu sắc nét và cực kỳ chân thực.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-g.jpg"
+                alt=""
+              />
+              <h3>Camera selfie tự động bắt nét linh hoạt</h3>
+              <p class="content">
+                Công nghệ hiện đại giúp iPhone 14 chụp selfie xuất sắc trong cả
+                tác vụ chân dung cận cảnh cũng như những khuôn hình chụp nhóm.
+                Với camera TrueDepth khẩu độ lớn ở mặt trước thiết bị sẽ tự động
+                lấy nét để tạo ra các khuôn hình đủ sáng, đầy màu sắc và nịnh
+                mắt.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-i.jpg"
+                alt=""
+              />
+              <h3>iPhone 14 với chip A15 Bionic mạnh hơn trước</h3>
+              <p class="content">
+                Bộ vi xử lý Apple A15 Bionic của iPhone 14 có sự khác biệt so
+                với phiên bản trên iPhone 13 khi sở hữu tới 5 nhân GPU và cung
+                cấp hiệu năng đồ họa, chơi game cường độ cao cùng khả năng xử lý
+                các tác vụ AR mượt mà hơn nhiều. Ngoài ra, thiết kế cấu trúc
+                thân máy độc đáo cũng giúp iPhone 14 tản nhiệt tốt và duy trì
+                hiệu năng bền bỉ hơn. <br />
+                Với A15 Bionic, bạn hoàn toàn có thể an tâm rằng những thông tin
+                lưu trữ trong iPhone 14 như dữ liệu Face ID, danh bạ, tài liệu
+                cá nhân sẽ được bảo vệ tuyệt đối cùng Secure Enclave.
+              </p>
+              <img
+                src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/HaoPA/meizu/Mo-ta-san-pham-iphone-14-k.jpg"
+                alt=""
+              />
+            </div>
+          </ng-container>
+          <div style="display: flex; justify-content: center;">
+            <button type="button" class="btn" (click)="toggleContent()">
+              {{ showFullContent ? "Ẩn" : "Xem thêm" }}
+            </button>
+          </div>
+        </div>
+
+        <div class="comment-group">
+          <form (ngSubmit)="submitComment()">
+            <div class="form-group">
+              <label for="commentText">Câu hỏi của bạn</label>
+              <textarea
+                class="form-control"
+                id="commentText"
+                name="commentText"
+                rows="3"
+                required
+                [(ngModel)]="newComment.text"
+              ></textarea>
+            </div>
+            <div style="display: flex; justify-content: center;">
+              <button type="submit" class="btn">
+                Gửi
+              </button>
+            </div>
+          </form>
+
+          <div class="comment">
+            <h2 class="comment-title">Trao đổi</h2>
+            <div *ngFor="let comment of item.comments" class="comment-box">
+              <h3 class="comment-user">{{ comment.username }}</h3>
+              <p class="comment-content">{{ comment.text }}</p>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="containers">
+    <app-footer></app-footer>
+  </div>
+

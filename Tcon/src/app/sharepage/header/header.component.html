@@ -1,0 +1,120 @@
+<header>
+  <div class="containers">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="language">
+          <ul>
+            <a href=""
+              ><img
+                src="https://images.squarespace-cdn.com/content/v1/62d09f54a49d6f1c78455cce/397032fd-0ef7-4e86-b1ae-a672413b0836/T1_Logo_White.png"
+                alt=""
+                style="height: 40px; width: 80px"
+            /></a>
+            <li (click)="drop('phone')">
+              Điện thoại <i class="fa fa-caret-down"></i>
+              <div class="dropdown" *ngIf="id === 'phone'">
+                <ul>
+                  <li routerLink="phone">iPhone</li>
+                  <li>Samsung</li>
+                  <li>Xiaomi</li>
+                </ul>
+              </div>
+            </li>
+            <li (click)="drop('tablet')">
+              Tablet <i class="fa fa-caret-down"></i>
+              <div class="dropdown" *ngIf="id === 'tablet'">
+                <ul>
+                  <li>iPad</li>
+                  <li>Samsung</li>
+                  <li>Xiaomi</li>
+                </ul>
+              </div>
+            </li>
+            <li (click)="drop('accessory')">
+              Phụ kiện <i class="fa fa-caret-down"></i>
+              <div class="dropdown" *ngIf="id === 'accessory'">
+                <ul>
+                  <li>Apple</li>
+                  <li>Khác</li>
+                </ul>
+              </div>
+            </li>
+            <a routerLink="" style="color: #fff; font-size: 13px">khuyến mãi</a>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <!-- Thêm sự kiện (keyup) để gọi phương thức onSearch() -->
+        <input
+          type="search"
+          class="search"
+          placeholder="Tìm kiếm"
+          (keyup)="onSearch($event)"
+        />
+        <button type="button" class="btn-search">
+          <i class="fa-solid fa-search"></i>
+        </button>
+        <div *ngIf="searchResults.length > 0" class="search-results">
+          <ul>
+            <li *ngFor="let result of searchResults" style="margin-top: 15px">
+              <a [routerLink]="['/phone', result.id]"
+                ><img
+                  src="{{ result.image }}"
+                  alt=""
+                  style="height: 50px; width: 50px"
+                />{{ result.name }}</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-2 text-center" style="margin-top: 10px; display: flex">
+        <!-- <div class="cart-icon" (click)="toggleCart()"> -->
+        <div class="cart-icon">
+          <a routerLink="cart">
+            <i class="fa-solid fa-shopping-cart"></i>
+          </a>
+          <div class="cart-value">
+            {{ cartItemCount }}
+          </div>
+        </div>
+
+        <div class="social-menu">
+          <ul>
+            <li
+              *ngIf="authService.isLoggedIn; else loginLink"
+              class="user"
+              (click)="drop('user')"
+            >
+            
+            <h2 *ngIf="authService.userData as user">{{user.email}}</h2>
+              <!-- <i class="fa-solid fa-user" style="cursor: pointer"></i> -->
+              <!-- Hiển thị biểu tượng người dùng khi đã đăng nhập -->
+              <div class="dropdown dropdown-user" *ngIf="id === 'user'">
+                <ul>
+                  <li *ngIf="isAdmin">
+                    <!-- Chỉ hiển thị link trang admin nếu người dùng là admin -->
+                    <a routerLink="admin-dashboard">Trang Admin</a>
+                  </li>
+                  <li *ngIf="!isAdmin">
+                    <a routerLink="dashboard">Trang cá nhân</a>
+                  </li>
+                  <li>
+                    <a (click)="logout()">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <ng-template #loginLink>
+              <!-- Hiển thị nút Đăng nhập khi chưa đăng nhập -->
+              <li>
+                <a routerLink="login" class="login"> Đăng nhập </a>
+              </li>
+            </ng-template>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,149 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Kanit', sans-serif;
+}
+
+.banner{
+    position: relative;
+}
+
+.banner .owl-prev, .banner .owl-next{
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    background-color: transparent!important;
+    transition: all .3s ease;
+}
+
+.banner .owl-prev{
+    left: 51px;
+}
+
+.banner .owl-next{
+    right: -60px;
+}
+
+.banner .owl-prev::before, .banner .owl-next::before{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 110px;
+    height: 110px;
+    background-color: #ffffff24;
+    content: '';
+    border-radius: 50%;
+}
+
+.banner .owl-prev::before{
+    left: 6px;
+}
+
+.banner .owl-next::before{
+    right: -106px;
+}
+
+.banner .owl-prev svg, .banner .owl-next svg{
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner .owl-prev svg{
+    left: 16px;
+}
+
+.banner .owl-next svg{
+    right: 0;
+}
+
+.banner .owl-prev:hover::before, .banner .owl-next:hover::before{
+    background-color: #ff4000!important;
+}
+
+.policy-product .owl-carousel .owl-stage-outer{
+    overflow-y: visible; overflow-x: clip;
+}
+
+
+  .testimonial .owl-prev, .testimonial .owl-next{
+    position: absolute!important;
+    background-color: #ffffff24!important;
+    width: 64px!important;
+    height: 64px!important;
+    border-radius: 50%!important;
+    z-index: 2!important;
+    font-size: 24px!important;
+    color: #111!important;
+    transition: all .3s ease!important;
+    top: 50%!important;
+    transform: translate(-50%, -50%)!important;
+}
+
+.testimonial .owl-prev{
+    left: 114px!important;
+}
+
+.testimonial .owl-next{
+    right: 48px!important;
+}
+
+.testimonial .owl-prev svg, .testimonial .owl-next svg{
+    position: absolute!important;
+    top: 50%!important;
+    left: 50%!important;
+    transform: translate(-50%, -50%);
+}
+
+.testimonial .owl-prev:hover, .testimonial .owl-next:hover{
+    background-color: #ff4000!important;
+    color: #fff!important;
+}
+
+.policy-product .owl-next, .policy-product .owl-prev{
+    background-color: rgb(158, 158, 158 /28%)!important;
+    color: #222!important;
+    height: 60px!important;
+    width: 60px!important;
+    border-radius: 50%!important;
+    position: absolute;
+    top: 50%;
+    transition: .3s all ease;
+}
+
+.policy-product .owl-next{
+    right: -35px;
+    top: -15px;
+    translate: (-50%, -50%);
+}
+
+.policy-product .owl-prev{
+    left: -35px;
+    top: -15px;
+    translate: (-50%, -50%);
+}
+
+.policy-product .owl-next svg, .policy-product .owl-prev svg{
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:  translate(-50%, -50%);
+}
+
+.policy-product .owl-next:hover{
+    background-color: #ff4000!important;
+    color: #fff!important;
+}
+.policy-product .owl-prev:hover{
+    background-color: #ff4000!important;
+    color: #fff!important;
+}
+html, body { height: 100%; }

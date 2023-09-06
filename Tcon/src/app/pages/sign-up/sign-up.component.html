@@ -1,0 +1,42 @@
+<div class="displayTable">
+    <div class="displayTableCell">
+      <div class="authBlock">
+        <h3>Đăng ký</h3>
+        <div class="formGroup">
+          <input
+            type="email"
+            class="formControl"
+            placeholder="Địa chỉ Email"
+            #userEmail
+            required
+          />
+        </div>
+        <div class="formGroup">
+          <input
+            type="password"
+            class="formControl"
+            placeholder="Mật khẩu"
+            #userPwd
+            required
+          />
+        </div>
+        <div class="formGroup">
+          <input
+            type="button"
+            class="btn btnPrimary"
+            value="Đăng ký"
+            (click)="authService.SignUp(userEmail.value, userPwd.value)"
+          />
+        </div>
+        <div class="formGroup">
+          <span class="or"><span class="orInner">Hoặc</span></span>
+        </div>
+      </div>
+      <div class="redirectToLogin">
+        <span
+          >Đã có tài khoản?
+          <span class="redirect" routerLink="/login">Đăng nhập</span></span
+        >
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,43 @@
+    <app-admin-nav></app-admin-nav>
+  
+  <div class="dashboard">
+    <!-- Data Box 1 -->
+    <div class="data-box">
+      <h3>{{ newOrdersCount }}</h3>
+      <p>Đơn hàng mới trong ngày</p>
+    </div>
+  
+    <!-- Data Box 2 -->
+    <div class="data-box">
+      <h3>{{ totalSales | number: '1.0-0'}} ₫</h3>
+      <p>Tổng tiền thu được</p>
+    </div>
+  </div>
+   <!-- Recent Orders -->
+   <div class="data-box">
+    <h3>Các đơn hàng gần đây</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Ngày đặt</th>
+          <th>Tổng tiền</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Sử dụng *ngFor để lặp qua danh sách đơn hàng và hiển thị thông tin -->
+        <tr *ngFor="let order of orders | paginate: { itemsPerPage: 5, currentPage: p }">
+          <td>  
+            <p>{{ order.buyer.email }}</p>
+          </td>
+          <td>{{ convertTimestampToDate(order.orderTime) | date:'dd-MM-yyyy' }}</td>
+          <td>
+            <p>{{order.total| number: '1.0-0'}} ₫</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>

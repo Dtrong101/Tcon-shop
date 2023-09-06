@@ -1,0 +1,46 @@
+<app-admin-nav></app-admin-nav>
+<button class="sort-button" (click)="sortOrdersByTotal()" style="margin-top: 20px;">Sắp xếp theo tổng tiền tăng dần</button>
+<button class="sort-button" (click)="sortOrdersByTotalDescending()">Sắp xếp theo giá tiền giảm dần</button>
+<button class="sort-button" (click)="sortOrdersByDate()">Sắp xếp theo ngày tăng dần</button>
+<button class="sort-button" (click)="sortOrdersByDateDescending()">Sắp xếp theo ngày giảm dần</button>
+
+<!-- Hiển thị danh sách đơn hàng -->
+<div class="order-row">
+  <div *ngFor="let order of allOrders | paginate: { itemsPerPage: 6, currentPage: p } " class="order-item">
+    <div class="order-container">
+      <p><strong>Mã đơn hàng:</strong> {{ order.id }}</p>
+      <p><strong>Email người mua:</strong> {{ order.buyer.email }}</p>
+      <p><strong>Tổng tiền:</strong> {{ order.total | number }} VNĐ</p>
+    
+      <!-- Nút "Xem chi tiết" -->
+      <button (click)="showOrderDetails(order)">
+        {{ order.isDetailsShown ? 'Đóng chi tiết' : 'Xem chi tiết' }}
+      </button>
+    </div>
+  
+  
+    <!-- Hiển thị thông tin chi tiết đơn hàng khi isDetailsShown là true -->
+    <div *ngIf="order.isDetailsShown" class="order-details">
+      <h2>Thông tin chi tiết đơn hàng</h2>
+      <p><strong>Mã đơn hàng:</strong> {{ order.id }}</p>
+      <p><strong>Thời gian đặt hàng:</strong> {{ order.orderTime.seconds * 1000 | date:'dd/MM/yyyy HH:mm:ss' }}</p>
+      <p><strong>Tổng tiền:</strong> {{ order.total | number }} VNĐ</p>
+      <p><strong>Phương thức thanh toán:</strong> {{ order.paymentMethod }}</p>
+      <!-- Hiển thị các thông tin khác về đơn hàng -->
+  
+      <!-- Danh sách sản phẩm trong giỏ hàng -->
+      <h2>Danh sách sản phẩm trong giỏ hàng:</h2>
+      <ul>
+        <li *ngFor="let item of order.cartItems">
+          <p><strong>{{ item.name }}</strong> - {{ item.quantity }} x {{ item.price | number }} VNĐ</p>
+          <p><strong>Màu sắc:</strong> {{ item.color }}</p>
+          <p><strong>Bộ nhớ:</strong> {{ item.storage }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="pagination">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

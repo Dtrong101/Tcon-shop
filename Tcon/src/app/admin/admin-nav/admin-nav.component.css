@@ -1,0 +1,39 @@
+/* Đặt màu nền cho thanh điều hướng */
+.navbar {
+    background-color: #f8f9fa;
+  }
+  
+  /* Đặt màu chữ cho các liên kết */
+  .navbar-nav .nav-link {
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+
+
+  .navbar-nav .nav-link:hover{
+    color: #d04212;
+  }
+  
+  /* Điều chỉnh khoảng cách giữa các liên kết */
+  .navbar-nav .nav-link {
+    margin-right: 20px;
+  }
+  
+  /* Tùy chỉnh nút toggle */
+  .custom-toggler {
+    border: none;
+    background-color: transparent;
+    outline: none;
+  }
+  
+  .custom-toggler .navbar-toggler-icon {
+    background-color: #333;
+  }
+  
+  /* Dịch chuyển liên kết sang bên phải */
+  .navbar-nav.ml-auto {
+    margin-left: auto;
+  }
+  

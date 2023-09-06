@@ -1,0 +1,216 @@
+.product-detail{
+  margin-top: 20px;
+}
+
+.product-images{
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.main-image {
+  width: 50%;
+  margin-left: 200px;
+  object-fit: cover;
+  padding-top: 20px;
+}
+
+/* Style for thumbnail images */
+.thumbnail-images {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border-radius: 50px;
+  width: 50%;
+  justify-content: center;
+  margin-left: 25%;
+  padding-right: 20px;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  margin-right: 10px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Product info section */
+.product-info {
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 50px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.product-info span{
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.product-info h2 {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.product-info p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.product-content {
+  margin-top: 30px;
+}
+
+.cart-btn {
+  background-color: #ff4000;
+  color: #fff;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 10px;  
+  margin-top: 15px;
+  width: 100%;
+  font-weight: 600;
+}
+
+.order-btn {
+  background-color: #ff4000;
+  color: #fff;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 100%;
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+.order-btn:hover{
+  background-color: rgb(176, 26, 26);
+}
+
+
+.cart-btn:hover{
+  background-color: rgb(176, 26, 26);
+}
+
+/* Styling for comments section */
+.comment {
+  margin-top: 30px;
+}
+
+.comment-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.comment-user {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.comment-content {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Styling for comment form */
+form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+.btn {
+  background-color: #fa4000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: rgb(176, 26, 26);
+}
+
+.product-content {
+  border-radius: 20px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.product-content img {
+  width: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.product-content h2 {
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.product-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.product-content .content {
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+.comment-group {
+  border-radius: 20px;
+  margin-top: 30px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.comment-box h3 {
+  font-weight: 600;
+}
+
+
+.comment p {
+  border-radius: 10px;
+  padding: 10px;
+  background: #fff;
+  margin-left: 30px;
+  height: 55px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.containers{
+  width: 95%;
+  margin: 30px auto;
+}

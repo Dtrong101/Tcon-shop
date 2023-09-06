@@ -1,0 +1,10 @@
+.btn{
+    background-color: #ff4000;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.btn:hover{
+    background-color: #d04212;
+}
