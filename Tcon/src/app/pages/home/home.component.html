@@ -3,10 +3,10 @@
       <owl-carousel-o [options]="BannerOptions">
         <ng-template carouselSlide>
           <img class="banner-img" src="../../../assets/1200x628_Banner-KM-2.png" alt="">
-        </ng-template>
+        </ng-template>  
         <ng-template carouselSlide>
-          <img class="banner-img" src="https://i.pinimg.com/564x/0f/b9/38/0fb938517f5a28ba12754257d2290833.jpg" alt="">
-        </ng-template>
+          <img class="banner-img" src="../../../assets/iphone-14-series-luon-co-san-hang-giao-ngay-khong-can-doi-social.jpg" alt="">
+        </ng-template>  
         <ng-template carouselSlide>
           <img class="banner-img" src="../../../assets/thu-cu-doi-moi-2.jpg" alt="">
         </ng-template>
@@ -17,7 +17,7 @@
   <section class="best-selling" >
     <div class="containers">
       <div class="best-selling-container" *ngIf="bestSellingItem$ | async as bestSellingItem">
-        <div class="sale-price  ">
+        <div class="sale-price">
           Sale <strong>14%</strong>
         </div>
         <div class="selling-col-1">
@@ -87,7 +87,7 @@
             <h3>Cầu thủ bóng đá</h3>
             <p>Shop uy tín, giao hàng nhanh</p>
           </div>
-        </ng-template>
+        </ng-template>  
         <ng-template carouselSlide>
           <div class="testimonial-img">
             <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/1/21/1140501/Kane-Mu-Tottenham.jpg" alt="">
@@ -97,7 +97,7 @@
             <h3>Cầu thủ bóng đá</h3>
             <p>Giá cả hợp lý, chất lượng tốt</p>
           </div>
-        </ng-template>
+        </ng-template>  
         <ng-template carouselSlide>
           <div class="testimonial-img">
             <img src="https://cdn.oneesports.gg/cdn-data/2022/11/LeagueOfLegends_Worlds2022_T1Faker_ThumbsUp.jpg" alt="">
@@ -107,12 +107,12 @@
             <h3>CEO T1</h3>
             <p>Shop cam kết uy tín với chất lượng hàng đầu</p>
           </div>
-        </ng-template>
+        </ng-template>  
       </owl-carousel-o>
     </div>
   </section>
 
-  <div class="display-area p-3">
+  <div class="display-area p-3">  
     <div class="containers">
       <div class="title">
         <p>Best Seller</p>
@@ -155,8 +155,8 @@
         </owl-carousel-o>
       </div>
     </div>
-
-
+    
+    
     <section class="policy">
       <div class="containers text-center">
           <div class="row">
@@ -213,7 +213,7 @@
                 <p>So với thời điểm giữa tháng 6, các chuỗi bán lẻ tại Việt Nam đã giảm giá thêm 200.000-500.000 đồng cho mẫu iPhone 14 Pro Max.</p>
                 <a href="" class="read-more">Xem tiếp <i class="fa fa-caret-right"></i></a>
               </div>
-            </ng-template>
+            </ng-template>  
             <ng-template carouselSlide>
               <div class="policy-p-card">
                 <div class="date">
@@ -226,8 +226,8 @@
                 <h2>So sánh Samsung Galaxy Z Fold5 và Z Fold4: Thay đổi không nhiều</h2>
                 <p>Galaxy Z Fold5 đã được Samsung tối ưu thiết kế từ Z Fold4 nhằm mang lại trải nghiệm tối ưu hơn cho người dùng, vì vậy hai chiếc điện thoại này khá giống nhau về ngoại hình</p>
                 <a href="" class="read-more">Xem tiếp <i class="fa fa-caret-right"></i></a>
-              </div>
-            </ng-template>
+              </div>  
+            </ng-template>  
             <ng-template carouselSlide>
               <div class="policy-p-card">
                 <div class="date">
@@ -240,8 +240,8 @@
                 <h2>iPhone 15 dự kiến sẽ được ra mắt vào ngày 13/9?</h2>
                 <p>Lễ ra mắt iPhone 15 của Apple dự kiến sẽ diễn ra vào tháng 9 năm nay. Theo báo cáo của 9to5Mac, Apple có thể sẽ tổ chức sự kiện ra mắt vào ngày 13/9 tới.</p>
                 <a href="" class="read-more">Xem tiếp <i class="fa fa-caret-right"></i></a>
-              </div>
-            </ng-template>
+              </div>  
+            </ng-template>  
             <ng-template carouselSlide>
               <div class="policy-p-card">
                 <div class="date">
@@ -254,8 +254,8 @@
                 <h2>Giá iPhone 14 Pro Max tại Việt Nam lập đáy mới</h2>
                 <p>So với thời điểm giữa tháng 6, các chuỗi bán lẻ tại Việt Nam đã giảm giá thêm 200.000-500.000 đồng cho mẫu iPhone 14 Pro Max.</p>
                 <a href="" class="read-more">Xem tiếp <i class="fa fa-caret-right"></i></a>
-              </div>
-            </ng-template>
+              </div>  
+            </ng-template>  
           </owl-carousel-o>
         </div>
     </section>
@@ -263,10 +263,10 @@
     <section class="partners">
       <div class="containers">
         <owl-carousel-o [options]="customOptions">
-          <ng-template carouselSlide *ngFor="let partnersArrays of partnersArray"><img style="width: 100px; height: 100px;" src="{{partnersArrays.imgName}}" alt=""></ng-template>
+          <ng-template carouselSlide *ngFor="let partnersArrays of partnersArray"><img style="width: 100px; height: 100px;" src="{{partnersArrays.imgName}}" alt=""></ng-template>  
         </owl-carousel-o>
       </div>
     </section>
-
+    
     <app-footer></app-footer>
   </div>

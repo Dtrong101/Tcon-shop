@@ -39,7 +39,6 @@ import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 import { NgxStripeModule } from 'ngx-stripe';
 
 
-
 @NgModule({
   declarations: [
     FooterComponent,

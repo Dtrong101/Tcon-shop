@@ -4,12 +4,7 @@
       <div class="col-md-6">
         <div class="language">
           <ul>
-            <a href=""
-              ><img
-                src="https://images.squarespace-cdn.com/content/v1/62d09f54a49d6f1c78455cce/397032fd-0ef7-4e86-b1ae-a672413b0836/T1_Logo_White.png"
-                alt=""
-                style="height: 40px; width: 80px"
-            /></a>
+            <a href=""><img src="https://images.squarespace-cdn.com/content/v1/62d09f54a49d6f1c78455cce/397032fd-0ef7-4e86-b1ae-a672413b0836/T1_Logo_White.png" alt="" style="height: 40px; width: 80px;"></a>
             <li (click)="drop('phone')">
               Điện thoại <i class="fa fa-caret-down"></i>
               <div class="dropdown" *ngIf="id === 'phone'">
@@ -39,37 +34,26 @@
                 </ul>
               </div>
             </li>
-            <a routerLink="" style="color: #fff; font-size: 13px">khuyến mãi</a>
+            <a routerLink="" style="color: #fff; font-size: 13px;">khuyến mãi</a>
           </ul>
         </div>
       </div>
       <div class="col-md-4">
         <!-- Thêm sự kiện (keyup) để gọi phương thức onSearch() -->
-        <input
-          type="search"
-          class="search"
-          placeholder="Tìm kiếm"
-          (keyup)="onSearch($event)"
-        />
+        <input type="search" class="search" placeholder="Tìm kiếm" (keyup)="onSearch($event)" />
         <button type="button" class="btn-search">
           <i class="fa-solid fa-search"></i>
         </button>
         <div *ngIf="searchResults.length > 0" class="search-results">
           <ul>
-            <li *ngFor="let result of searchResults" style="margin-top: 15px">
-              <a [routerLink]="['/phone', result.id]"
-                ><img
-                  src="{{ result.image }}"
-                  alt=""
-                  style="height: 50px; width: 50px"
-                />{{ result.name }}</a
-              >
+            <li *ngFor="let result of searchResults" style="margin-top: 15px;">
+              <a [routerLink]="['/phone', result.id]"><img src="{{result.image}}" alt="" style="height: 50px; width: 50px;">{{ result.name }}</a>
             </li>
           </ul>
         </div>
       </div>
-
-      <div class="col-md-2 text-center" style="margin-top: 10px; display: flex">
+      
+      <div class="col-md-2 text-center" style="margin-top: 10px; display: flex;">
         <!-- <div class="cart-icon" (click)="toggleCart()"> -->
         <div class="cart-icon">
           <a routerLink="cart">
@@ -87,10 +71,8 @@
               class="user"
               (click)="drop('user')"
             >
-            
-            <h2 *ngIf="authService.userData as user">{{user.email}}</h2>
-              <!-- <i class="fa-solid fa-user" style="cursor: pointer"></i> -->
               <!-- Hiển thị biểu tượng người dùng khi đã đăng nhập -->
+              <i class="fa-solid fa-user" style="cursor: pointer;"></i>
               <div class="dropdown dropdown-user" *ngIf="id === 'user'">
                 <ul>
                   <li *ngIf="isAdmin">
