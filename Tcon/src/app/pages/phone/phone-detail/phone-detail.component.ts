@@ -28,14 +28,18 @@ export class PhoneDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log("đã vô");
     // Lấy thông tin sản phẩm từ tham số URL
     this.route.paramMap.subscribe((params) => {
       const itemId = params.get('id')!;
+
       this.afs
         .collection('Items')
         .doc<Item>(itemId)
         .valueChanges()
         .subscribe((item) => {
+          console.log(item);
+
           this.item = item;
           this.selectedColor = null;
 
@@ -59,6 +63,21 @@ export class PhoneDetailComponent implements OnInit {
               });
           }
         });
+
+        // Sử dụng doc để truy cập vào tài liệu trong collection "Items" dựa trên itemId
+    this.afs
+    .collection('Items')
+    .doc(itemId)
+    .valueChanges()
+    .subscribe((item) => {
+      if (item) {
+        console.log(item);
+
+        // Xử lý dữ liệu item ở đây
+      } else {
+        console.log("Không tìm thấy sản phẩm với ID:", itemId);
+      }
+    });
     });
 
     this.authService.afAuth.authState.subscribe((user: any) => {

@@ -1,8 +1,11 @@
 import { DataService } from 'src/app/sharepage/services/data.service';
 import { AuthService } from './../../sharepage/services/auth.service';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { Item } from './../../sharepage/services/item';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-mod-item',
@@ -29,8 +32,10 @@ export class ModItemComponent implements OnInit {
   ItemType: string = '';
   ItemColor: string = '';
   ItemStorage: string = '';
+  ItemImgUrl: string = '';
+  selectedImage: File | null = null;
 
-  constructor(private auth: AuthService, private data: DataService, private snackBar: MatSnackBar,) {}
+  constructor(private router: Router, private auth: AuthService, private data: DataService, private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.getAllItem();
@@ -51,6 +56,34 @@ export class ModItemComponent implements OnInit {
     );
   }
 
+  onFileSelected(event: any) {
+    // const file = event.target.files[0];
+    // if (file) {
+    //   this.selectedImage = file;
+
+    //   // Tạo tên duy nhất cho tệp hình ảnh sử dụng timestamp
+    //   const fileName = `${Date.now()}_${file.name}`;
+
+    //   // Thư mục trong Firebase Storage để lưu trữ hình ảnh (tuỳ chọn)
+    //   const storageRef = this.storage.ref('product_images/' + fileName);
+
+    //   // Tải tệp lên Firebase Storage
+    //   const uploadTask = this.storage.upload('product_images/' + fileName, file);
+
+    //   // Lắng nghe sự kiện khi tải lên hoàn tất và lấy URL
+    //   uploadTask
+    //     .snapshotChanges()
+    //     .pipe(
+    //       finalize(() => {
+    //         storageRef.getDownloadURL().subscribe((downloadURL) => {
+    //           this.ItemImgUrl = downloadURL;
+    //         });
+    //       })
+    //     )
+    //     .subscribe();
+    // }
+  }
+
   resetForm() {
     this.id = '';
     this.ItemName = '';
@@ -60,6 +93,11 @@ export class ModItemComponent implements OnInit {
     this.ItemColor = '';
     this.ItemStorage = '';
     this.ItemImage = '';
+  }
+
+  viewItemDetails(item: any) {
+    // Chuyển đến trang chi tiết với id của mục
+    this.router.navigate(['/phone', item.id]);
   }
 
   addItem() {

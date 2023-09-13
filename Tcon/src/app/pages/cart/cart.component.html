@@ -113,11 +113,8 @@
         Thẻ tín dụng
       </label>
       <div *ngIf="selectedPaymentMethod == 'thẻ tín dụng'">
-        <h2>Nhập thông tin thẻ</h2>
-        <ngx-stripe-card
-          [options]="cardOptions"
-          [elementsOptions]="elementsOptions"
-        ></ngx-stripe-card>
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+
       </div>
     </form>
   </div>
@@ -125,6 +122,7 @@
   <div class="cart-total" style="border-radius: 10px">
     Tổng giá trị: {{ total | number : "1.0-0" }} ₫
   </div>
+
   <div *ngIf="CartNotEmpty()" style="margin-left: auto">
     <button class="checkout-btn" (click)="checkout()">Thanh toán</button>
   </div>

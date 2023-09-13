@@ -7,12 +7,13 @@ import { initializeApp } from 'firebase/app';
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyD_3Pf8UxRjY3uyenADRV02lizmmUAH6Rc',
-    authDomain: 'mobile-web-f276c.firebaseapp.com',
-    projectId: 'mobile-web-f276c',
-    storageBucket: 'mobile-web-f276c.appspot.com',
-    messagingSenderId: '685642464600',
-    appId: '1:685642464600:web:3de9dbed30d231ce9eb92d',
+    apiKey: "AIzaSyD_3Pf8UxRjY3uyenADRV02lizmmUAH6Rc",
+    authDomain: "mobile-web-f276c.firebaseapp.com",
+    databaseURL: "https://mobile-web-f276c-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "mobile-web-f276c",
+    storageBucket: "mobile-web-f276c.appspot.com",
+    messagingSenderId: "685642464600",
+    appId: "1:685642464600:web:3de9dbed30d231ce9eb92d"
   },
 
   stripe: {

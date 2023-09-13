@@ -8,3 +8,8 @@
 .btn:hover{
     background-color: #d04212;
 }
+
+.group-button{
+    display: flex;
+    flex-direction: column;
+}

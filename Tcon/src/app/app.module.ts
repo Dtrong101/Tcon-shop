@@ -37,6 +37,7 @@ import { PhoneDetailComponent } from './pages/phone/phone-detail/phone-detail.co
 import {NgxPaginationModule} from 'ngx-pagination';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 import { NgxStripeModule } from 'ngx-stripe';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 
 @NgModule({
@@ -65,11 +66,12 @@ import { NgxStripeModule } from 'ngx-stripe';
     FontAwesomeModule,
     CarouselModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
     AngularFireStorageModule,
+    AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     FormsModule,
+    NgxPayPalModule,
     MatSnackBarModule,
     NgxPaginationModule,
     NgxStripeModule.forRoot('pk_test_51Nl1tWArc6gJSMik0852ZaV67fHCzceJ9bkJTu5flGbJABIGrp3dcWD0ORalbhOTgBPoj8vAHPWRNIVkCT0p97OU00mSoqgsG8'),

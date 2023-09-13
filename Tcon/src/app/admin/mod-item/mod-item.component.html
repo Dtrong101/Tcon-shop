@@ -92,8 +92,9 @@
                         <td>{{item.storage}}</td>
                         <td>{{item.quantity}}</td>
                         <td>{{item.price| number: '1.0-0'}} ₫</td>
-                        <td>
+                        <td class="group-button">
                             <button class="btn btn-outline-danger" (click)="deleteItem(item)">Xoá</button>
+                            <button class="btn btn-outline-primary mt-2" (click)="viewItemDetails(item)">Xem chi tiết</button>
                         </td>
                       </tr>
                     </tbody>

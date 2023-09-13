@@ -29,6 +29,11 @@ export class HomeComponent implements OnInit{
     this.filteredProducts$ = this.products$.pipe(
       map(products => products.filter(item => item.color === 'Đen'))
     );
+    this.products$.subscribe(products => {
+      console.log(products);
+      // Tiếp tục xử lý dữ liệu nếu cần
+    });
+    
   }
 
   products$: Observable<Item[]>;
@@ -218,6 +223,7 @@ export class HomeComponent implements OnInit{
   }
 
   goToItemDetail(product: Item) {
+    console.log(product);
     this.router.navigate(['/phone', product.id]);
   }
 }

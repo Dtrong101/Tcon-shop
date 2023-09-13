@@ -1,7 +1,26 @@
 {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  },
+  "database": {
     "rules": {
       ".read": true,
       ".write": true
     }
+  },
+  "hosting": {
+    "public": "dist/tcon",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   }
-  
+}
