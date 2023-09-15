@@ -13,6 +13,9 @@ import { ModItemComponent } from './admin/mod-item/mod-item.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { OrderListComponent } from './admin/order-list/order-list.component';
 import { PhoneDetailComponent } from './pages/phone/phone-detail/phone-detail.component';
+import { UserManagementComponent } from './admin/user-management/user-management.component';
+import { NotificationComponent } from './admin/notification/notification.component';
+import { PromotionManagementComponent } from './admin/promotion-management/promotion-management.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -26,6 +29,9 @@ const routes: Routes = [
   {path: 'admin-mod', component: ModItemComponent},
   {path: 'cart', component: CartComponent},
   {path: 'order-list', component: OrderListComponent},
+  {path: 'user-list', component: UserManagementComponent},
+  {path: 'notification', component: NotificationComponent},
+  {path: 'promotion', component: PromotionManagementComponent},
   {path: 'phone/:id', component: PhoneDetailComponent},
 ];
 

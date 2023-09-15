@@ -38,6 +38,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 import { NgxStripeModule } from 'ngx-stripe';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { UserManagementComponent } from './admin/user-management/user-management.component';
+import { NotificationComponent } from './admin/notification/notification.component';
+import { PromotionManagementComponent } from './admin/promotion-management/promotion-management.component';
 
 
 @NgModule({
@@ -58,6 +61,9 @@ import { NgxPayPalModule } from 'ngx-paypal';
     OrderListComponent,
     PhoneDetailComponent,
     AdminNavComponent,
+    UserManagementComponent,
+    NotificationComponent,
+    PromotionManagementComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,12 @@
 import { AngularFirestore, DocumentSnapshot } from '@angular/fire/compat/firestore';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Item } from 'src/app/sharepage/services/item';
 import { Observable } from 'rxjs';
 import { CartService } from 'src/app/sharepage/services/cart.service';
 import { Router } from '@angular/router';
 import { map, of } from 'rxjs';
+declare var window: any;
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,8 @@ import { map, of } from 'rxjs';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
-  constructor(private afs: AngularFirestore, private cartService: CartService, private router: Router) {
+  constructor(private afs: AngularFirestore, private cartService: CartService, private router: Router, private renderer: Renderer2
+    ) {
     this.products$ = this.afs.collection<Item>('Items').valueChanges();
     this.bestSellingItem$ = new Observable<Item>();
 
@@ -33,7 +35,20 @@ export class HomeComponent implements OnInit{
       console.log(products);
       // Tiếp tục xử lý dữ liệu nếu cần
     });
-    
+
+    const script = `
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src='https://embed.tawk.to/63ae4eb547425128790ac3c0/1glge6to9';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();`;
+    const el = this.renderer.createElement('script');
+    el.text = script;
+    this.renderer.appendChild(document.body, el);
   }
 
   products$: Observable<Item[]>;

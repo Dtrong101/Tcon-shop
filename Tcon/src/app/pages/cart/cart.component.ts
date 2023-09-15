@@ -1,5 +1,5 @@
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Renderer2 } from '@angular/core';
 import { CartService } from 'src/app/sharepage/services/cart.service';
 import { Item } from 'src/app/sharepage/services/item';
 import { AuthService } from 'src/app/sharepage/services/auth.service';
@@ -21,10 +21,12 @@ import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 export class CartComponent implements OnInit {
   cartItems: Item[] = [];
   total: number = 0;
+  promotion: any = '';
   userInfo: User | any;
   guestInfo: any = {}; // Đặt giá trị mặc định là một đối tượng trống
   isLoggedIn: boolean = false;
   paymentHandler: any = null;
+  discountAmount: number = 0;
   public payPalConfig?: IPayPalConfig;
 
   @ViewChild(StripeCardComponent) card!: StripeCardComponent;
@@ -70,6 +72,7 @@ export class CartComponent implements OnInit {
     private authService: AuthService,
     private snackBar: MatSnackBar,
     private afs: AngularFirestore,
+    private renderer: Renderer2,
     private fb: FormBuilder, private stripeService: StripeService
   ) { }
 
@@ -79,7 +82,7 @@ export class CartComponent implements OnInit {
     });
     this.cartItems = this.cartService.getCartItems();
     this.calculateTotal();
-    this.initConfig(this.total/25000);
+    this.initConfig((this.total - this.discountAmount) / 25000);
 
     this.authService.afAuth.authState.subscribe((user: any) => {
       this.isLoggedIn = !!user;
@@ -94,6 +97,45 @@ export class CartComponent implements OnInit {
             this.guestPhone = this.userInfo.phone || '';
           }
         });
+      }
+    });
+
+    const script = `
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src='https://embed.tawk.to/63ae4eb547425128790ac3c0/1glge6to9';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();`;
+    const el = this.renderer.createElement('script');
+    el.text = script;
+    this.renderer.appendChild(document.body, el);
+  }
+
+  async applyPromotion() {
+    // Lấy mã khuyến mãi từ input
+    const promotionCode = this.promotion;
+    console.log(promotionCode)
+    // Sử dụng AngularFirestore để truy vấn dữ liệu
+    const promotionRef = this.afs.collection('promotion').doc(promotionCode);
+    console.log(promotionRef)
+
+    // Lắng nghe sự thay đổi của tài liệu với mã khuyến mãi tương ứng
+    promotionRef.valueChanges().subscribe((promotion: any) => {
+      console.log(promotion)
+
+      if (promotion) {
+        // Tính giảm giá dựa trên phần trăm giảm giá từ mã khuyến mãi
+        const discountPercentage = promotion.discountPercentage;
+        this.discountAmount = (this.total * discountPercentage) / 100;
+
+        
+      } else {
+        // Nếu mã khuyến mãi không tồn tại, đặt giá trị giảm giá về 0
+        this.discountAmount = 0;
       }
     });
   }
@@ -149,7 +191,7 @@ export class CartComponent implements OnInit {
           this.userInfo.address = this.guestAddress;
           this.userInfo.phone = this.guestPhone;
           if (this.selectedPaymentMethod == 'thẻ tín dụng') {
-           
+
             this.authService.updateUserInfo(this.userInfo.uid, this.userInfo)
               .then(() => {
                 this.showSuccessToast('Đặt hàng thành công!');
@@ -254,7 +296,7 @@ export class CartComponent implements OnInit {
       this.userInfo.address = this.guestAddress;
       this.userInfo.phone = this.guestPhone;
       if (this.selectedPaymentMethod == 'thẻ tín dụng') {
-       
+
         this.authService.updateUserInfo(this.userInfo.uid, this.userInfo)
           .then(() => {
             this.showSuccessToast('Đặt hàng thành công!');
@@ -314,8 +356,16 @@ export class CartComponent implements OnInit {
       cartItems: this.cartItems,
       buyer: this.userInfo || this.guestInfo,
       orderTime: new Date(),
-      total: this.total,
+      total: (this.total - this.discountAmount),
       paymentMethod: this.selectedPaymentMethod,
+    };
+
+    const notification = {
+      id: orderId,
+      buyer: this.userInfo || this.guestInfo,
+      orderTime: new Date(),
+      total: (this.total - this.discountAmount),
+      describe: "Bạn vừa có đơn hàng mới!",
     };
 
     // Thực hiện lưu vào Firestore
@@ -327,6 +377,15 @@ export class CartComponent implements OnInit {
       })
       .catch((error) => {
         console.error('Lỗi khi lưu thông tin đơn hàng vào Firestore:', error);
+      });
+
+    // Thực hiện lưu vào Firestore
+    this.authService.saveNotification(notification)
+      .then(() => {
+        console.log('Đã lưu thông tin thông báo vào Firestore');
+      })
+      .catch((error) => {
+        console.error('Lỗi khi lưu thông tin thông báo vào Firestore:', error);
       });
 
     this.clearCart();

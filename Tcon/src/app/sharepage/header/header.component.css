@@ -157,6 +157,29 @@ font-size: 25px;
   color: white;
 }
 
+.cart-icon-2{
+  position:relative;
+  cursor:pointer;
+  margin-left: 30px;
+}
+
+.cart-icon-2:focus{
+  outline:none;
+  border:none;
+}
+
+.cart-icon-2 i{
+font-size: 25px;
+}
+
+.cart-icon-2 i:hover{
+  color: #ff4000;
+}
+
+.cart-icon-2 a{
+  color: white;
+}
+
 .cart-value{
   position:absolute;
   top:-16px;

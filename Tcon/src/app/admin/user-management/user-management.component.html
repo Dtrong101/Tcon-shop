@@ -1,0 +1,90 @@
+<app-admin-nav></app-admin-nav>
+<div class="container" style="margin-top: 20px;">
+    <form (ngSubmit)="selectedItem ? updateItem() : ''">
+        <div class="row mb-3">
+            <label for="ItemName" class="col-sm-2 col-form-label">Tên</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="ItemName"
+                    name="ItemName" [(ngModel)]="displayName">
+            </div>
+        </div>
+
+
+        <div class="row mb-3">
+            <label for="ItemType" class="col-sm-2 col-form-label">Phân quyền</label>
+            <div class="col-sm-10">
+                <select id="ItemType" class="form-select" name="ItemType"
+                    [(ngModel)]="role">
+                    <option>
+                        user
+                    </option>
+                    <option>
+                        admin
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="ItemQuantity" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="ItemQuantity"
+                    name="ItemQuantity" [(ngModel)]="email">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="ItemPrice" class="col-sm-2 col-form-label">Phone</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="ItemPrice"
+                    name="ItemPrice" [(ngModel)]="phone">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="ItemColor" class="col-sm-2 col-form-label">Address</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="ItemColor"
+                    name="ItemColor" [(ngModel)]="address">
+            </div>
+        </div>
+
+
+        <div class="col-12 d-flex justify-content-end">
+            <button type="submit" class="btn">
+                {{ selectedItem ? 'Sửa thành viên' : '' }}
+            </button>
+        </div>
+    </form>
+
+    <div>
+        <h5 class="text-danger" style="font-size: 20px; margin-top: 10px;">Danh
+            sách sản phẩm</h5>
+        <div class="card p-3 shadow">
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr style="text-align: center;">
+                            <th scope="col">Uid</th>
+                            <th scope="col">Tên</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of ItemList"
+                            (click)="selectItem(item)" style="text-align:
+                            center; cursor: pointer;">
+                            <td>{{item.uid}}</td>
+                            <td>{{item.displayName}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.address}}</td>
+                            <td>{{item.role}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

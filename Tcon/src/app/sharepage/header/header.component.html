@@ -3,8 +3,8 @@
     <div class="row">
       <div class="col-md-6">
         <div class="language">
-          <ul>
-            <a href=""><img src="https://images.squarespace-cdn.com/content/v1/62d09f54a49d6f1c78455cce/397032fd-0ef7-4e86-b1ae-a672413b0836/T1_Logo_White.png" alt="" style="height: 40px; width: 80px;"></a>
+          <a href=""><img src="https://images.squarespace-cdn.com/content/v1/62d09f54a49d6f1c78455cce/397032fd-0ef7-4e86-b1ae-a672413b0836/T1_Logo_White.png" alt="" style="height: 40px; width: 80px;"></a>
+          <ul *ngIf="isAdminUser">
             <li (click)="drop('phone')">
               Điện thoại <i class="fa fa-caret-down"></i>
               <div class="dropdown" *ngIf="id === 'phone'">
@@ -40,8 +40,8 @@
       </div>
       <div class="col-md-4">
         <!-- Thêm sự kiện (keyup) để gọi phương thức onSearch() -->
-        <input type="search" class="search" placeholder="Tìm kiếm" (keyup)="onSearch($event)" />
-        <button type="button" class="btn-search">
+        <input *ngIf="isAdminUser" type="search" class="search" placeholder="Tìm kiếm" (keyup)="onSearch($event)" />
+        <button type="button" class="btn-search" *ngIf="isAdminUser">
           <i class="fa-solid fa-search"></i>
         </button>
         <div *ngIf="searchResults.length > 0" class="search-results">
@@ -55,12 +55,21 @@
       
       <div class="col-md-2 text-center" style="margin-top: 10px; display: flex;">
         <!-- <div class="cart-icon" (click)="toggleCart()"> -->
-        <div class="cart-icon">
+        <div class="cart-icon" *ngIf="isAdminUser">
           <a routerLink="cart">
             <i class="fa-solid fa-shopping-cart"></i>
           </a>
           <div class="cart-value">
             {{ cartItemCount }}
+          </div>
+        </div>
+
+        <div class="cart-icon-2">
+          <a routerLink="notification">
+            <i class="fa-solid fa-bell"></i>
+          </a>
+          <div class="cart-value">
+            {{ notificationCount }}
           </div>
         </div>
 

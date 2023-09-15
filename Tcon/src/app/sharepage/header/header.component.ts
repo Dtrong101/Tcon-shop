@@ -6,6 +6,7 @@ import { Observable, Subscription } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { User } from '../services/user';
 import { Item } from '../services/item';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-header',
@@ -19,14 +20,16 @@ export class HeaderComponent implements OnInit {
   id: any;
   private itemsCollection!: AngularFirestoreCollection<Item>;
   searchResults: Item[] = [];
+  notificationCount: number = 0;
 
-  private cartItemCountSubscription: Subscription; 
+  private cartItemCountSubscription: Subscription;
 
   constructor(
     public authService: AuthService,
     private cartService: CartService,
     private afs: AngularFirestore,
     private afAuth: AngularFireAuth,
+    private data: DataService
   ) {
     this.cartItemCountSubscription = this.cartService.getCartItemCount().subscribe(count => {
       this.cartItemCount = count;
@@ -34,7 +37,7 @@ export class HeaderComponent implements OnInit {
     this.user$ = this.afAuth.authState;
     this.itemsCollection = this.afs.collection<Item>('Items');
   }
-  
+
   isAdminUser: boolean = false;
   ngOnInit() {
     this.user$.subscribe(async (user) => {
@@ -48,6 +51,15 @@ export class HeaderComponent implements OnInit {
       }
     });
     this.itemsCollection = this.afs.collection<Item>('Items');
+
+    this.data.getAllItemNotification().subscribe(
+      (res) => {
+        this.notificationCount = res.length
+      },
+      (err) => {
+        alert('Lỗi khi xử lý dữ liệu sản phẩm');
+      }
+    );
   }
 
   drop(param: any) {
@@ -67,7 +79,7 @@ export class HeaderComponent implements OnInit {
   onSearch(event: Event) {
     const target = event.target as HTMLInputElement;
     const query = target.value.trim().toLowerCase(); // Chuyển query thành chữ thường
-  
+
     if (query !== '') {
       // Perform the search using Firestore query
       this.itemsCollection.ref
@@ -75,7 +87,7 @@ export class HeaderComponent implements OnInit {
         .then((querySnapshot) => {
           // Clear the previous search results
           this.searchResults = [];
-  
+
           // Iterate through the query results and add matching items to the searchResults array
           querySnapshot.forEach((doc) => {
             const item = doc.data() as Item;
@@ -92,5 +104,5 @@ export class HeaderComponent implements OnInit {
       this.searchResults = [];
     }
   }
-  
+
 }

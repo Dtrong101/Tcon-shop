@@ -86,6 +86,18 @@
           required
         />
       </div>
+      <div class="form-group">
+        <label for="phone">Mã khuyến mãi:</label>
+        <input
+          type="text"
+          id="promotion"
+          name="promotion"
+          [(ngModel)]="promotion"
+          required
+        />
+      </div>
+      <button class="checkout-btn" (click)="applyPromotion()">Áp dụng mã khuyến mãi</button>
+
     </form>
   </div>
 
@@ -121,6 +133,12 @@
 
   <div class="cart-total" style="border-radius: 10px">
     Tổng giá trị: {{ total | number : "1.0-0" }} ₫
+  </div>
+  <div class="cart-total" style="border-radius: 10px" *ngIf="discountAmount > 0">
+    Giảm giá: {{ discountAmount | number : "1.0-0" }} ₫
+  </div>
+  <div class="cart-total" style="border-radius: 10px">
+    Tổng thanh toán: {{ (total - discountAmount) | number : "1.0-0" }} ₫
   </div>
 
   <div *ngIf="CartNotEmpty()" style="margin-left: auto">

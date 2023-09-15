@@ -26,6 +26,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@paypal/react-paypal-js": "^8.1.3",
+    "@tawk.to/tawk-messenger-angular": "^1.0.0",
     "firebase": "^10.3.1",
     "ngx-owl-carousel-o": "^16.0.0",
     "ngx-pagination": "^6.0.3",

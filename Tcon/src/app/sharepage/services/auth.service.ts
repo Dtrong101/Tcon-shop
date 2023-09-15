@@ -196,6 +196,13 @@ export class AuthService {
     return orderRef.set(orderData);
   }
 
+  saveNotification(orderData: any): Promise<void> {
+    const orderRef: AngularFirestoreDocument<any> = this.afs
+      .collection('notification')
+      .doc();
+    return orderRef.set(orderData);
+  }
+
   getFieldFromFirestore(uid: string, field: string): Observable<string> {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${uid}`);
     return userRef.valueChanges().pipe(
