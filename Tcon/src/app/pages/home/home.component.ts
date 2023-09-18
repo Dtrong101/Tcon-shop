@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit{
   }
   filteredProducts$: Observable<Item[]> = of([]);
   bestSellingItem$: Observable<Item | undefined>;
-  
+
 
   ngOnInit(): void {
     this.products$ = this.afs.collection<Item>('Items').valueChanges();
@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit{
     (function () {
       var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
       s1.async = true;
-      s1.src='https://embed.tawk.to/63ae4eb547425128790ac3c0/1glge6to9';
+      s1.src='https://embed.tawk.to/6504f6330f2b18434fd8cadb/1hadm3eov';
       s1.charset = 'UTF-8';
       s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);
@@ -49,6 +49,8 @@ export class HomeComponent implements OnInit{
     const el = this.renderer.createElement('script');
     el.text = script;
     this.renderer.appendChild(document.body, el);
+
+
   }
 
   products$: Observable<Item[]>;
@@ -58,10 +60,10 @@ export class HomeComponent implements OnInit{
       this.id =""
     }
     else{
-      this.id = param; 
+      this.id = param;
     }
   }
-  
+
   partnersArray:any = [
     {
       imgName: "../../../assets/knowledge_graph_logo.png"
@@ -231,7 +233,7 @@ export class HomeComponent implements OnInit{
   countDownTimer(){
 
   }
-  
+
   addToCart(product: Item) {
     // Gọi hàm addToCart từ CartService để thêm sản phẩm vào giỏ hàng
     this.cartService.addToCart(product);

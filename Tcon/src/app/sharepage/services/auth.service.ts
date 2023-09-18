@@ -123,9 +123,9 @@ export class AuthService {
       role: 'user',
     };
 
-    
+
     // Nếu email của người dùng là 'tuochung@gmail.com', đặt quyền truy cập là 'admin'
-    if (user.email == 'tuochung@gmail.com') {
+    if (user.email == 'grey100102@gmail.com') {
       userData.role = 'admin';
     }
 
@@ -215,14 +215,14 @@ export class AuthService {
   getDisplayNameFromFirestore(uid: string): Observable<string> {
     return this.getFieldFromFirestore(uid, 'displayName');
   }
-  
+
   getPhoneFromFirestore(uid: string): Observable<string> {
     return this.getFieldFromFirestore(uid, 'phone');
   }
-  
+
   getAddressFromFirestore(uid: string): Observable<string> {
     return this.getFieldFromFirestore(uid, 'address');
   }
-  
-    
+
+
 }

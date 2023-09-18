@@ -1,7 +1,8 @@
+<app-header></app-header>
 <app-admin-nav></app-admin-nav>
 <div class="container" style="margin-top: 20px;">
     <form (ngSubmit)="selectedItem ? updateItem() : addItem()">
-        
+
         <div class="row mb-3">
             <label for="id" class="col-sm-2 col-form-label">Mã giảm giá</label>
             <div class="col-sm-10">
@@ -22,7 +23,7 @@
                 <input type="number" class="form-control" id="DiscountPercentage" name="DiscountPercentage" [(ngModel)]="DiscountPercentage" max="100">
             </div>
         </div>
-        
+
 
         <!-- Các trường khác ở đây -->
 

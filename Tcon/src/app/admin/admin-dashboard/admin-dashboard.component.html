@@ -1,12 +1,13 @@
-    <app-admin-nav></app-admin-nav>
-  
+<app-header></app-header>
+   <app-admin-nav></app-admin-nav>
+
   <div class="dashboard">
     <!-- Data Box 1 -->
     <div class="data-box">
       <h3>{{ newOrdersCount }}</h3>
       <p>Đơn hàng mới trong ngày</p>
     </div>
-  
+
     <!-- Data Box 2 -->
     <div class="data-box">
       <h3>{{ totalSales | number: '1.0-0'}} ₫</h3>
@@ -27,7 +28,7 @@
       <tbody>
         <!-- Sử dụng *ngFor để lặp qua danh sách đơn hàng và hiển thị thông tin -->
         <tr *ngFor="let order of orders | paginate: { itemsPerPage: 5, currentPage: p }">
-          <td>  
+          <td>
             <p>{{ order.buyer.email }}</p>
           </td>
           <td>{{ convertTimestampToDate(order.orderTime) | date:'dd-MM-yyyy' }}</td>

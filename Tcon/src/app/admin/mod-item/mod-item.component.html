@@ -1,3 +1,4 @@
+<app-header></app-header>
 <app-admin-nav></app-admin-nav>
 <div class="container" style="margin-top: 20px;">
     <form (ngSubmit)="selectedItem ? updateItem() : addItem()">
@@ -29,7 +30,7 @@
                         Phụ kiện
                     </option>
                 </select>
-            </div>          
+            </div>
         </div>
 
         <div class="row mb-3">
@@ -52,7 +53,7 @@
                 <input type="text" class="form-control" id="ItemColor" name="ItemColor" [(ngModel)]="ItemColor">
             </div>
         </div>
-        
+
         <div class="row mb-3" *ngIf="ItemType !== 'Phụ kiện'">
             <label for="ItemStorage" class="col-sm-2 col-form-label">Dung lượng sản phẩm</label>
             <div class="col-sm-10">
@@ -102,4 +103,4 @@
             </div>
         </div>
     </div>
-</div> 
+</div>

@@ -1,3 +1,4 @@
+<app-header></app-header>
 <app-admin-nav></app-admin-nav>
 <button class="sort-button" (click)="sortOrdersByTotal()" style="margin-top: 20px;">Sắp xếp theo tổng tiền tăng dần</button>
 <button class="sort-button" (click)="sortOrdersByTotalDescending()">Sắp xếp theo giá tiền giảm dần</button>
@@ -11,14 +12,14 @@
       <p><strong>Mã đơn hàng:</strong> {{ order.id }}</p>
       <p><strong>Email người mua:</strong> {{ order.buyer.email }}</p>
       <p><strong>Tổng tiền:</strong> {{ order.total | number }} VNĐ</p>
-    
+
       <!-- Nút "Xem chi tiết" -->
       <button (click)="showOrderDetails(order)">
         {{ order.isDetailsShown ? 'Đóng chi tiết' : 'Xem chi tiết' }}
       </button>
     </div>
-  
-  
+
+
     <!-- Hiển thị thông tin chi tiết đơn hàng khi isDetailsShown là true -->
     <div *ngIf="order.isDetailsShown" class="order-details">
       <h2>Thông tin chi tiết đơn hàng</h2>
@@ -27,7 +28,7 @@
       <p><strong>Tổng tiền:</strong> {{ order.total | number }} VNĐ</p>
       <p><strong>Phương thức thanh toán:</strong> {{ order.paymentMethod }}</p>
       <!-- Hiển thị các thông tin khác về đơn hàng -->
-  
+
       <!-- Danh sách sản phẩm trong giỏ hàng -->
       <h2>Danh sách sản phẩm trong giỏ hàng:</h2>
       <ul>

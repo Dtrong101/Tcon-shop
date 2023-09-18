@@ -7,6 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { finalize } from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-mod-item',
   templateUrl: './mod-item.component.html',
@@ -123,6 +124,18 @@ export class ModItemComponent implements OnInit {
     this.ItemObj.storage = this.ItemStorage;
     this.ItemObj.image = this.ItemImage;
 
+if  (isNaN(this.ItemObj.quantity))
+{
+  this.showSuccessToast('Lỗi thêm sản phẩm')
+  return;
+}
+
+if  (isNaN(this.ItemObj.price))
+{
+  alert('test')
+  return;
+}
+
     this.data.addItem(this.ItemObj);
     this.showSuccessToast('Thêm sản phẩm thành công')
     this.resetForm();
@@ -208,4 +221,6 @@ export class ModItemComponent implements OnInit {
       panelClass:['success']
     });
   }
+
+
 }

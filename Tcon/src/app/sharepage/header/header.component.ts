@@ -45,10 +45,11 @@ export class HeaderComponent implements OnInit {
         const userRef = this.afs.doc(`users/${user.uid}`);
         const userSnapshot = await userRef.get().toPromise();
         const userData = userSnapshot?.data() as User;
-        this.isAdmin = userData?.role === 'admin';
+        this.isAdminUser = userData?.role === 'admin' ? true : false;
       } else {
-        this.isAdmin = false;
+        this.isAdminUser = false;
       }
+      console.log(this.isAdminUser);
     });
     this.itemsCollection = this.afs.collection<Item>('Items');
 

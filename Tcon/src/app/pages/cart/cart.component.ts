@@ -100,12 +100,13 @@ export class CartComponent implements OnInit {
       }
     });
 
+
     const script = `
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function () {
       var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
       s1.async = true;
-      s1.src='https://embed.tawk.to/63ae4eb547425128790ac3c0/1glge6to9';
+      s1.src='https://embed.tawk.to/6504f6330f2b18434fd8cadb/1hadm3eov';
       s1.charset = 'UTF-8';
       s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);
@@ -113,6 +114,7 @@ export class CartComponent implements OnInit {
     const el = this.renderer.createElement('script');
     el.text = script;
     this.renderer.appendChild(document.body, el);
+
   }
 
   async applyPromotion() {
@@ -132,7 +134,7 @@ export class CartComponent implements OnInit {
         const discountPercentage = promotion.discountPercentage;
         this.discountAmount = (this.total * discountPercentage) / 100;
 
-        
+
       } else {
         // Nếu mã khuyến mãi không tồn tại, đặt giá trị giảm giá về 0
         this.discountAmount = 0;
