@@ -79,7 +79,7 @@
 }
 
 .footer-all-menu h2::before{
-    position: absolute; 
+    position: absolute;
     content: '';
     width: 50px;
     height: 2px;
@@ -214,3 +214,5 @@
     background-color: #ff4000;
     color: #111;
 }
+
+

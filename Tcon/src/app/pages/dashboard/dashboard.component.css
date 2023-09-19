@@ -47,30 +47,30 @@
 .edit-btn:hover{
   background-color: #d04212;
 }
-  
+
   .edit-form {
     padding: 30px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
-  
+
   .edit-form form {
     display: flex;
     flex-direction: column;
   }
-  
+
   .edit-form .label {
     margin-bottom: 5px;
     font-weight: bold;
   }
-  
+
   .edit-form input {
     margin-bottom: 15px;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 3px;
   }
-  
+
   .edit-form button {
     padding: 8px 16px;
     background-color: #ff4000;
@@ -79,7 +79,20 @@
     border-radius: 3px;
     cursor: pointer;
   }
-  
+
   .edit-form button:hover {
     background-color: #d04212;
+  }
+
+
+  @media (max-width: 768px) {
+    .sidebar-sticky {
+      display: none; /* Hide the sidebar at 768px and below */
+
+    }
+
+    .col-md-9 {
+      width: 100%; /* Make the main content full width at 768px and below */
+    }
+
   }

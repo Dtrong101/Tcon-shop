@@ -2,22 +2,22 @@
   margin-top: 20px;
 }
 
-.product-images{
-  border-radius: 30px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
+  /* .product-images{
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  } */
 
 
-.main-image {
+/* .main-image {
   width: 50%;
   margin-left: 200px;
   object-fit: cover;
   padding-top: 20px;
-}
+} */
 
 /* Style for thumbnail images */
-.thumbnail-images {
+/* .thumbnail-images {
   display: flex;
   margin-top: 10px;
   margin-bottom: 30px;
@@ -26,16 +26,16 @@
   justify-content: center;
   margin-left: 25%;
   padding-right: 20px;
-}
+} */
 
-.thumbnail {
+/* .thumbnail {
   width: 60px;
   height: 60px;
   cursor: pointer;
   margin-right: 10px;
   object-fit: cover;
   border-radius: 10px;
-}
+} */
 
 /* Product info section */
 .product-info {
@@ -71,7 +71,7 @@
   border: none;
   padding: 15px 20px;
   cursor: pointer;
-  border-radius: 10px;  
+  border-radius: 10px;
   margin-top: 15px;
   width: 100%;
   font-weight: 600;
@@ -213,4 +213,59 @@ textarea.form-control {
 .containers{
   width: 95%;
   margin: 30px auto;
+}
+
+/* Default styles for product images */
+.product-images {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.main-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.thumbnail-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.thumbnail {
+  max-width: 100px;
+  height: auto;
+}
+
+/* Responsive styles for screens 768px and below */
+@media (max-width: 768px) {
+  .product-images {
+    flex-direction: column; /* Stack main image and thumbnails vertically */
+    align-items: center; /* Center-align items */
+  }
+
+  .main-image {
+    max-width: 100%; /* Ensure the main image fits within its container */
+  }
+
+  .thumbnail-images {
+    justify-content: center; /* Center-align thumbnails horizontally */
+    margin-top: 10px;
+  }
+}
+@media (max-width:1024px){
+  .product-images {
+    flex-direction: column; /* Stack main image and thumbnails vertically */
+    align-items: center; /* Center-align items */
+  }
+
+  .main-image {
+    max-width: 100%; /* Ensure the main image fits within its container */
+  }
+
+  .thumbnail-images {
+    justify-content: center; /* Center-align thumbnails horizontally */
+    margin-top: 10px;
+  }
 }

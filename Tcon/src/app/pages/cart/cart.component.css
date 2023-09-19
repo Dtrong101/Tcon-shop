@@ -91,7 +91,7 @@ button.checkout-btn {
   margin-top: 20px;
   margin-right: 10px;
   border-radius: 10px;
-  
+
 }
 
 button.checkout-btn:hover {
@@ -176,5 +176,30 @@ button.checkout-btn:hover {
   .payment-method {
     flex-basis: 100%;
   }
+    .container {
+      padding: 10px; /* Add some padding for better mobile display */
+    }
+
+    .cart-table {
+      /* Adjust table styles for mobile */
+      font-size: 14px;
+    }
+
+    .user-info, .payment-method {
+      /* Adjust form styles for mobile */
+      margin-top: 20px;
+    }
+
+    .cart-total {
+      /* Adjust cart total styles for mobile */
+      margin-top: 20px;
+    }
+
+    .checkout-btn {
+      /* Adjust checkout button styles for mobile */
+      display: block;
+      margin-top: 20px;
+      margin-left: auto;
+    }
 }
 

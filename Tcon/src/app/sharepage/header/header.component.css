@@ -254,7 +254,7 @@ header {
 }
 
 @media only screen and (max-width: 999px) {
-  .language  {
+  .language {
     position: fixed;
     right: 0;
     width: 280px;
@@ -262,7 +262,23 @@ header {
     top: 64px;
     background: #000;
   }
-  .language > ul > li {
-
+  .language ul > li {
+    display: block;
+    text-align: left;
+    margin: 0 ;
+    padding: 10px 0 10px 26px;
+border-bottom: 1px solid #323232;
+  }
+  .menu_icon {
+    display: inline-block;
+    position: relative;
+    right: 0;
+    top: 20px;
+  }
+  .menu_icon span {
+    width: 32px;
+    height: 3px;
+    background: #fff;
+    display: block;
   }
 }

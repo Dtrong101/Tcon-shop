@@ -4,7 +4,7 @@
     margin-bottom: 10px;
     text-align: center;
   }
-  
+
 .card{
     transition: all .2s ease-in-out;
     border-bottom-left-radius: 20px;
@@ -203,7 +203,7 @@
     gap: 10px;
     margin-bottom: 20px;
   }
-  
+
   .sort-button {
     background-color: #3498db;
     color: #ffffff;
@@ -215,7 +215,7 @@
     margin: 0 10px 10px 0 ;
     border-radius: 10px;
   }
-  
+
   .sort-button:hover {
     background-color: #2980b9;
   }
@@ -223,4 +223,18 @@
   .containers{
     width: 95%;
     margin: 30px auto;
+  }
+  @media (max-width: 768px) {
+    .sort-buttons {
+      text-align: center; /* Center-align the sort buttons */
+      margin-bottom: 20px;
+    }
+
+    .col-md-3 {
+      width: 100%; /* Make each item take up the full width on smaller screens */
+      margin-bottom: 20px;
+    }
+    .row{
+      margin-left: 50px;
+    }
   }
