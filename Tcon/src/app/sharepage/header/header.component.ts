@@ -7,7 +7,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
 import { User } from '../services/user';
 import { Item } from '../services/item';
 import { DataService } from '../services/data.service';
-
+import { Renderer2, ElementRef } from '@angular/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -29,7 +29,9 @@ export class HeaderComponent implements OnInit {
     private cartService: CartService,
     private afs: AngularFirestore,
     private afAuth: AngularFireAuth,
-    private data: DataService
+    private data: DataService,
+    private renderer: Renderer2, 
+    private elementRef: ElementRef
   ) {
     this.cartItemCountSubscription = this.cartService.getCartItemCount().subscribe(count => {
       this.cartItemCount = count;
@@ -106,4 +108,29 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+
+
+
+  
+  toggleActiveClass() {
+    const overlayElement = this.elementRef.nativeElement.querySelector('.offcanvas-menu-overlay');
+    const overlayElementTwo = this.elementRef.nativeElement.querySelector('.offcanvas-menu-wrapper');
+
+    if (overlayElement && overlayElementTwo) {
+      this.renderer.addClass(overlayElement, 'active');
+      this.renderer.addClass(overlayElementTwo, 'active');
+    }
+   
+  }
+  RemoveClass() {
+    const overlayElement = this.elementRef.nativeElement.querySelector('.offcanvas-menu-overlay');
+    const overlayElementTwo = this.elementRef.nativeElement.querySelector('.offcanvas-menu-wrapper');
+    if (overlayElement && overlayElementTwo) {
+      this.renderer.removeClass(overlayElement, 'active');
+      this.renderer.removeClass(overlayElementTwo, 'active');
+    }
+   
+  }
 }
+
+

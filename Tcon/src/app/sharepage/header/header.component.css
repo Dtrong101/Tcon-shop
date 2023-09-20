@@ -1,7 +1,29 @@
 header {
-  background-color: #e60000;
-  color: #fff;
+  color: #000;
   padding: 30px 5;
+  background-color: blanchedalmond;
+}
+.custom-header {
+  align-items:center
+}
+.dropdown-custom li{
+  color: #fff;
+  padding-left: 10px;
+
+  
+}
+.dropdown-custom li:hover{
+  background-color: #ccc;
+  cursor: pointer;
+ 
+
+  
+}
+.logo {
+  height: 40px;
+  width: 80px;
+  margin-left: 35px;
+
 }
 
 .containers {
@@ -48,10 +70,11 @@ header {
   border: 0;
   outline: 0;
   color: #777;
+  border-color: #777;
   background-color: #fff;
   padding: 0 15px;
   margin: 0;
-  min-width: 370px;
+  width: 110%;
   height: 40px;
   font-size: 14px;
   border-radius: 20px 0 0 20px;
@@ -59,12 +82,11 @@ header {
 }
 
 .btn-search {
-  position: relative;
+  position: absolute;
   top: 0px;
-  right: 40px;
+  right: 0px;
   color: #777;
   background-color: #fff;
-  padding: 0 25px;
   border-radius: 0 20px 20px 0;
   height: 40px;
   border: 0;
@@ -90,7 +112,6 @@ header {
   color: #111;
   font-weight: 500;
 }
-
 .dropdown ul li:last-child {
   border-bottom: none;
 }
@@ -223,8 +244,7 @@ header {
 .search-results {
   position: absolute;
   top: 65px;
-  left: 780;
-  width: 380px;
+  width: 75%;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 20px;
@@ -280,5 +300,20 @@ border-bottom: 1px solid #323232;
     height: 3px;
     background: #fff;
     display: block;
+  }
+  .search {
+    padding: 16px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .dropdown {
+    display: block;
+    position: relative;
+    color: #000;
+    top: 0;
+    text-align:inherit;
+  }
+  .dropdown-custom li {
+    color: #000;
   }
 }

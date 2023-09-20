@@ -27,3 +27,18 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span')?.textContent).toContain('Tcon app is running!');
   });
 });
+// Hàm để thêm class
+function addClass(elementId: string, className: string) {
+  const element = document.getElementById(elementId);
+  if (element) {
+      element.classList.add(className);
+  }
+}
+
+// Hàm để xóa class
+function removeClass(elementId: string, className: string) {
+  const element = document.getElementById(elementId);
+  if (element) {
+      element.classList.remove(className);
+  }
+}
