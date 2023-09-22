@@ -289,6 +289,14 @@ header {
 .header__right .btn, .tip, .header__right__widget li a{
   color: #fff;
 }
+.slicknav_nav ul li{
+  color: #000;
+}
+
+.slicknav_nav ul .dropdown{
+  position: unset;
+  top: unset;
+}
 
 @media only screen and (max-width: 999px) {
   .language {
