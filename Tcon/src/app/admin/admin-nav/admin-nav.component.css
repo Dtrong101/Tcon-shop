@@ -1,38 +1,76 @@
 /* Đặt màu nền cho thanh điều hướng */
 .navbar {
-    background-color: #f8f9fa;
+  background-color: #f8f9fa;
+}
+
+/* Đặt màu chữ cho các liên kết */
+.navbar-nav .nav-link {
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #d04212;
+}
+
+/* Điều chỉnh khoảng cách giữa các liên kết */
+.navbar-nav .nav-link {
+  margin-right: 15px;
+}
+
+/* Tùy chỉnh nút toggle */
+.custom-toggler {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-color: #333;
+}
+
+/* Dịch chuyển liên kết sang bên phải */
+.navbar-nav.ml-auto {
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 1024px) {
+.container{
+  margin-left: 50px !important;
+  margin-right: 80px;
+
+}
+.nav-link{
+  margin-right: 11px !important;
+  font-size: 10px !important;
+}
+
+}
+@media only screen and (max-width:1440px){
+  .container{
+    margin-left: 150px !important ;
   }
-
-  /* Đặt màu chữ cho các liên kết */
-  .navbar-nav .nav-link {
-    color: #333;
-    font-size: 16px;
-    font-weight: 500;
+}
+@media only screen and (max-width: 768px){
+.navbar-toggler{
+  margin-right: 300px !important;
+  font-size: 13px;
+  padding: 6px 6px;
+}
+.button.navbar-toggler  {
+  padding: 10px 5px;
+  font-size: 10px;
+}
+}
+@media only screen and (max-width: 430px){
+  .navbar-toggler{
+    margin-right: 300px !important;
+    font-size: 10px;
+    padding: 4px 4px;
   }
-
-
-
-  .navbar-nav .nav-link:hover{
-    color: #d04212;
+  .button.navbar-toggler  {
+    padding: 10px 5px;
+    font-size: 12px;
   }
-
-  /* Điều chỉnh khoảng cách giữa các liên kết */
-  .navbar-nav .nav-link {
-    margin-right: 15px;
-  }
-
-  /* Tùy chỉnh nút toggle */
-  .custom-toggler {
-    border: none;
-    background-color: transparent;
-    outline: none;
-  }
-
-  .custom-toggler .navbar-toggler-icon {
-    background-color: #333;
-  }
-
-  /* Dịch chuyển liên kết sang bên phải */
-  .navbar-nav.ml-auto {
-    margin-left: auto;
   }

@@ -1,7 +1,28 @@
 header {
-  background-color: #e60000;
-  color: #fff;
+  color: #fcfcfc;
   padding: 30px 5;
+  background-color: rgb(255, 4, 4);
+}
+.custom-header {
+  align-items: center;
+}
+.dropdown-custom li {
+  color: #fff;
+  padding-left: 10px;
+  cursor: pointer;
+}
+.dropdown-custom li:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.header__menu ul li {
+  cursor: pointer;
+}
+.logo {
+  height: 40px;
+  margin-left: 35px;
+  max-width: none;
 }
 
 .containers {
@@ -48,23 +69,23 @@ header {
   border: 0;
   outline: 0;
   color: #777;
+  border-color: #777;
   background-color: #fff;
   padding: 0 15px;
   margin: 0;
-  min-width: 370px;
+  width: 110%;
   height: 40px;
   font-size: 14px;
-  border-radius: 20px 0 0 20px;
+  /* border-radius: 20px 0 0 20px; */
   position: relative;
 }
 
 .btn-search {
-  position: relative;
+  position: absolute;
   top: 0px;
-  right: 40px;
+  right: 0px;
   color: #777;
   background-color: #fff;
-  padding: 0 25px;
   border-radius: 0 20px 20px 0;
   height: 40px;
   border: 0;
@@ -90,7 +111,6 @@ header {
   color: #111;
   font-weight: 500;
 }
-
 .dropdown ul li:last-child {
   border-bottom: none;
 }
@@ -217,14 +237,23 @@ header {
 
 .dropdown-user {
   margin-top: 30px;
+  margin-left: 28px;
+}
+
+.dropdown-user ul li{
+  margin-right: -25px;
+  border-bottom: none;
+}
+
+.dropdown-user ul li a{
+  text-align: center;
 }
 
 /* CSS cho phần hiển thị kết quả tìm kiếm */
 .search-results {
   position: absolute;
   top: 65px;
-  left: 780;
-  width: 380px;
+  width: 75%;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 20px;
@@ -253,6 +282,14 @@ header {
   font-weight: 500;
 }
 
+.header__right a{
+  margin-right: 30px;
+}
+
+.header__right .btn, .tip, .header__right__widget li a{
+  color: #fff;
+}
+
 @media only screen and (max-width: 999px) {
   .language {
     position: fixed;
@@ -265,9 +302,9 @@ header {
   .language ul > li {
     display: block;
     text-align: left;
-    margin: 0 ;
+    margin: 0;
     padding: 10px 0 10px 26px;
-border-bottom: 1px solid #323232;
+    border-bottom: 1px solid #323232;
   }
   .menu_icon {
     display: inline-block;
@@ -280,5 +317,96 @@ border-bottom: 1px solid #323232;
     height: 3px;
     background: #fff;
     display: block;
+  }
+  .search {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .col-lg-2 {
+    width: 10%;
+  }
+
+  .col-lg-4 {
+    width: 40%;
+  }
+
+  .header__menu ul li a {
+    font-size: 12px;
+  }
+
+  .logo {
+    height: 25px;
+    margin-left: -20px;
+  }
+
+  .sign_up {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .header__right__widget {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-lg-2 {
+    width: 5%;
+    padding-left: 0;
+  }
+
+  .logo {
+    height: 20px;
+    margin-left: -16px;
+  }
+c
+  .col-lg-4 {
+    width: 45%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .header__menu ul {
+    margin-left: 10px;
+  }
+  .header__menu ul li {
+    margin-right: 20px;
+  }
+
+  .header__menu ul li a {
+    font-size: 8px;
+    font-weight: 500;
+  }
+
+  .col-lg-3 {
+    width: 30%;
+    padding-left: 0;
+    padding-right: 3px;
+  }
+
+  .col-md-12 {
+    transform: none;
+    width: 100%;
+  }
+
+  .search {
+    height: 20px;
+    font-size: 10px;
+  }
+
+  .btn-search {
+    height: 20px;
+    top: 8px;
+    font-size: 10px;
+  }
+
+  .action {
+    width: 100%;
+  }
+
+  .header__right {
+    top: -83px;
+    font-size: 10px;
   }
 }

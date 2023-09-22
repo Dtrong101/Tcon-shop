@@ -1,4 +1,4 @@
-<!-- <app-header></app-header> -->
+<app-header></app-header>
 <div class="container" style="margin-top: 50px">
   <h1 class="title">iPhone Series</h1>
   <div>
@@ -12,7 +12,7 @@
 
   <div class="row">
     <ng-container *ngFor="let item of items | async">
-      <div class="col-md-3" style="width: 300px" *ngIf="item.color == 'Đen'">
+      <div class="col-md-3" *ngIf="item.color == 'Đen'">
         <div class="card">
           <div class="card-main">
             <div

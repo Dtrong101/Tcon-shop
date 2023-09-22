@@ -147,3 +147,43 @@ body{
     color: #fff!important;
 }
 html, body { height: 100%; }
+
+@media(max-width: 430px)
+{
+  .banner .owl-prev svg, .banner .owl-next svg{
+    font-size: 15px;
+  }
+
+  .banner .owl-prev, .banner .owl-next{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 45%;
+    transform: translate(-110%, -50%);
+    overflow: hidden;
+    background-color: transparent!important;
+    transition: all .3s ease;
+}
+  .banner .owl-prev svg, .banner .owl-next svg{
+    font-size: 15px;
+  }
+
+  .banner .owl-prev, .banner .owl-next{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 45%;
+    transform: translate(-110%, -50%);
+    overflow: hidden;
+    background-color: transparent!important;
+    transition: all .3s ease;
+}
+
+.testimonial .owl-prev{
+    left: 26px!important;
+}
+
+.testimonial .owl-next{
+    right: -37px!important;
+}
+}

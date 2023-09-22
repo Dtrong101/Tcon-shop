@@ -98,12 +98,15 @@ export class HomeComponent implements OnInit{
         items: 1
       },
       400: {
-        items: 2
+        items: 1
       },
       740: {
-        items: 3
+        items: 2
       },
       940: {
+        items: 3
+      },
+      1140: {
         items: 4
       }
     },
@@ -152,9 +155,12 @@ export class HomeComponent implements OnInit{
         items: 2
       },
       740: {
-        items: 3
+        items: 2
       },
       940: {
+        items: 2
+      },
+      1040: {
         items: 3
       }
     },

@@ -202,4 +202,12 @@ button.checkout-btn:hover {
       margin-left: auto;
     }
 }
+@media (max-width:430px){
+  .cart-table th {
+    font-size: 10px;
+  }
+  .cart-table tbody {
+    font-size:9px;
+  }
+}
 

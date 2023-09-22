@@ -3,7 +3,7 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
   }
-  
+
   html,
   body {
 	margin: 0;
@@ -13,13 +13,13 @@
 	height: 100%;
 	font-family: "Poppins", sans-serif;
   }
-  
+
   .feather {
 	width: 16px;
 	height: 16px;
 	vertical-align: text-bottom;
   }
-  
+
   h1,
   h2,
   h3,
@@ -28,57 +28,57 @@
   h6 {
 	font-weight: 600;
   }
-  
+
   .media-body h1 {
 	font-weight: 300;
 	margin-bottom: 20px;
   }
-  
+
   .media-body h1 strong {
 	font-weight: 600;
   }
-  
+
   .media-body p {
 	margin-bottom: 10px;
 	font-weight: 300;
   }
-  
+
   .media-body p strong {
 	margin-bottom: 10px;
 	font-weight: 600;
   }
-  
+
   .px-logo {
 	display: block;
 	clear: both;
 	margin: 0 auto 20px;
 	width: 220px;
   }
-  
+
   .px-logo a img {
 	width: 100%;
   }
-  
+
   .displayTable {
 	display: table;
 	width: 100%;
 	height: 100%;
 	background: linear-gradient(120deg,#2980b9, #8e44ad);
   }
-  
+
   .displayTableCell {
 	display: table-cell;
 	vertical-align: middle;
 	width: 100%;
 	height: 100%;
   }
-  
+
   h3 {
 	text-align: center;
 	font-size: 22px;
 	margin: 0 0 20px;
   }
-  
+
   .authBlock {
 	margin: 0 auto;
 	max-width: 400px;
@@ -89,20 +89,20 @@
 	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.04);
 	border-radius: 10px;
   }
-  
+
   label {
 	display: block;
 	font-size: 13px;
 	padding-bottom: 5px;
 	font-weight: 600;
   }
-  
+
   .formGroup {
 	margin-bottom: 20px;
 	float: left;
 	width: 100%;
   }
-  
+
   .formControl {
 	width: 100%;
 	display: block;
@@ -115,11 +115,11 @@
 	border-bottom: 2px solid #adadad;
 	border-radius: 10px;
   }
-  
+
   .formControl:focus {
 	border: 2px solid #d3d3d6;
   }
-  
+
   input::-webkit-input-placeholder {
 	/* color: #bbbbbb; */
 	width: 100%;
@@ -130,19 +130,19 @@
   background: none;
   outline: none;
   }
-  
+
   input::-moz-placeholder {
 	color: #bbbbbb;
   }
-  
+
   input:-ms-input-placeholder {
 	color: #bbbbbb;
   }
-  
+
   input:-moz-placeholder {
 	color: #bbbbbb;
   }
-  
+
   .displayTable .btn {
 	width: 100%;
 	border: none;
@@ -155,24 +155,24 @@
 	outline: none;
 	border-radius: 25px;
   }
-  
+
   .displayTable .btn:hover {
 	opacity: 0.88;
   }
-  
+
   .displayTable .btnSecondary {
 	background: #eeeeee;
 	color: #404040;
   }
-  
+
   .displayTable .googleBtn {
 	background: #4dd5fe;
   }
-  
+
   .displayTable .facebookBtn {
 	background: #4dd5fe;
   }
-  
+
   .or {
 	text-align: center;
 	display: block;
@@ -181,7 +181,7 @@
 	position: relative;
 	margin: 5px 0 0px;
   }
-  
+
   .orInner {
 	background: white;
 	display: inline-block;
@@ -189,7 +189,7 @@
 	position: relative;
 	padding: 0 12px;
   }
-  
+
   .or:before {
 	position: absolute;
 	content: "";
@@ -199,26 +199,26 @@
 	height: 1px;
 	background: #e2e2e2;
   }
-  
+
   .halfWidth {
 	width: 48.5%;
   }
-  
+
   .left {
 	float: left;
   }
-  
+
   .right {
 	float: right;
   }
-  
+
   .forgotPassword {
 	text-align: center;
 	margin: -12px 0 15px 0;
 	float: left;
 	width: 100%;
   }
-  
+
   .forgotPassword span {
 	color: #4dd5fe;
 	font-size: 14px;
@@ -227,7 +227,7 @@
 	display: inline-block;
 	padding-top: 20px;
   }
-  
+
   .redirectToLogin {
 	padding: 15px 0 0;
 	text-align: center;
@@ -236,11 +236,58 @@
 	display: block;
 	color: rgba(255, 255, 255, 0.6);
   }
-  
+
   .redirectToLogin .redirect {
 	cursor: pointer;
 	color: #ffffff;
 	text-decoration: underline;
   }
+  .authBlock {
+    text-align: center;
+  }
 
-  
+  .formControl {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  .btnPrimary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+  }
+
+  .or {
+    margin: 15px 0;
+    font-weight: bold;
+  }
+
+  .redirectToLogin {
+    text-align: center;
+  }
+
+  @media (max-width: 770px) {
+    /* Đặt lại kiểu dáng cho các phần tử khi độ rộng màn hình lớn hơn hoặc bằng 768px */
+    .authBlock {
+      text-align: left; /* Điều chỉnh vị trí của nội dung trái cho màn hình lớn hơn */
+    }
+
+    .formControl {
+      width: 100%; /* Điều chỉnh chiều rộng của các input để nội dung có thể trải dài */
+      margin-bottom: 10px; /* Điều chỉnh khoảng cách giữa các input */
+    }
+  }
+
+  @media (max-width: 430px) {
+    /* Đặt lại kiểu dáng cho các phần tử khi độ rộng màn hình lớn hơn hoặc bằng 425px */
+    .authBlock {
+      text-align: left; /* Điều chỉnh vị trí của nội dung trái cho màn hình lớn hơn */
+    }
+
+    .formControl {
+      width: 100%; /* Điều chỉnh chiều rộng của các input để nội dung có thể trải dài */
+      margin-bottom: 10px; /* Điều chỉnh khoảng cách giữa các input */
+    }
+  }

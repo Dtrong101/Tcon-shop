@@ -49,7 +49,7 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
         // Nếu đăng nhập thành công, lưu thông tin người dùng vào Firestore và điều hướng đến trang dashboard
-        this.SetUserData(result.user);
+
         this.afAuth.authState.subscribe(async (user) => {
           if (user && (await this.isAdmin())) {
             this.router.navigate(['admin-dashboard']);
@@ -116,18 +116,13 @@ export class AuthService {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
+    console.log(userRef);
     const userData: User = {
       uid: user.uid,
       email: user.email,
       emailVerified: user.emailVerified,
-      role: 'user',
+      role: user.role,
     };
-
-
-    // Nếu email của người dùng là 'tuochung@gmail.com', đặt quyền truy cập là 'admin'
-    if (user.email == 'grey100102@gmail.com') {
-      userData.role = 'admin';
-    }
 
 
     return userRef.set(userData, {

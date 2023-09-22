@@ -2,7 +2,7 @@ import { User } from 'src/app/sharepage/services/user';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/sharepage/services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
   isLoggedIn: boolean = false;
   isEditMode: boolean = false; // Biến để theo dõi trạng thái chỉnh sửa
 
-  constructor(public authService: AuthService, private snackBar: MatSnackBar) {
+  constructor(public authService: AuthService, private snackBar: MatSnackBar, private router: Router) {
     if (this.authService.userData && this.authService.userData.uid) {
       this.authService.getUserInfo(this.authService.userData.uid).subscribe(
         (user) => {
@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
       console.log('Không có thông tin người dùng hoặc uid không hợp lệ');
     }
   }
-  
+
   ngOnInit(): void {
     this.authService.afAuth.authState.subscribe((user: any) => {
       this.isLoggedIn = !!user;
@@ -61,7 +61,7 @@ export class DashboardComponent implements OnInit {
       }
     });
   }
-  
+
 
   toggleEditMode() {
     this.isEditMode = !this.isEditMode; // Đảo ngược giá trị trạng thái chỉnh sửa
@@ -92,5 +92,10 @@ export class DashboardComponent implements OnInit {
       horizontalPosition: 'center',
       panelClass:['success']
     });
+  }
+
+  logout() {
+    this.authService.SignOut();
+    this.router.navigate([''])
   }
 }

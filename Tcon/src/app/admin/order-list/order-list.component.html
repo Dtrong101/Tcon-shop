@@ -1,10 +1,11 @@
-<app-header></app-header>
+<!-- <app-header></app-header> -->
 <app-admin-nav></app-admin-nav>
-<button class="sort-button" (click)="sortOrdersByTotal()" style="margin-top: 20px;">Sắp xếp theo tổng tiền tăng dần</button>
+<div class="btn">
+<button class="sort-button first-btn" (click)="sortOrdersByTotal()">Sắp xếp theo tổng tiền tăng dần</button>
 <button class="sort-button" (click)="sortOrdersByTotalDescending()">Sắp xếp theo giá tiền giảm dần</button>
 <button class="sort-button" (click)="sortOrdersByDate()">Sắp xếp theo ngày tăng dần</button>
 <button class="sort-button" (click)="sortOrdersByDateDescending()">Sắp xếp theo ngày giảm dần</button>
-
+</div>
 <!-- Hiển thị danh sách đơn hàng -->
 <div class="order-row">
   <div *ngFor="let order of allOrders | paginate: { itemsPerPage: 6, currentPage: p } " class="order-item">
@@ -45,3 +46,5 @@
 <div class="pagination">
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
+
+<app-footer></app-footer>

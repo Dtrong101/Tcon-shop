@@ -1,61 +1,145 @@
-<header>
-  <div class="containers">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="language">
-
-          <a href=""
-            ><img
-              src="https://images.squarespace-cdn.com/content/v1/62d09f54a49d6f1c78455cce/397032fd-0ef7-4e86-b1ae-a672413b0836/T1_Logo_White.png"
-              alt=""
-              style="height: 40px; width: 80px"
-          /></a>
-          <ul *ngIf="!isAdminUser">
-            <li (click)="drop('phone')">
-              Điện thoại <i class="fa fa-caret-down"></i>
-              <div class="dropdown" *ngIf="id === 'phone'">
-                <ul>
-                  <li routerLink="phone">iPhone</li>
-                  <li>Samsung</li>
-                  <li>Xiaomi</li>
-                </ul>
-              </div>
-            </li>
-            <li (click)="drop('tablet')">
-              Tablet <i class="fa fa-caret-down"></i>
-              <div class="dropdown" *ngIf="id === 'tablet'">
-                <ul>
-                  <li>iPad</li>
-                  <li>Samsung</li>
-                  <li>Xiaomi</li>
-                </ul>
-              </div>
-            </li>
-            <li (click)="drop('accessory')">
-              Phụ kiện <i class="fa fa-caret-down"></i>
-              <div class="dropdown" *ngIf="id === 'accessory'">
-                <ul>
-                  <li>Apple</li>
-                  <li>Khác</li>
-                </ul>
-              </div>
-            </li>
-            <a routerLink="" style="color: #fff; font-size: 13px">khuyến mãi</a>
-          </ul>
+<div class="offcanvas-menu-overlay"></div>
+<div class="offcanvas-menu-wrapper">
+  <div class="offcanvas__close" (click)="RemoveClass()">
+    <i class="fa-regular fa-circle-xmark" style="color: #ffffff"></i>
+  </div>
+  <ul class="offcanvas__widget">
+    <li *ngIf="!isAdminUser">
+      <a routerLink="cart"
+        ><span class="icon_bag_alt"></span>
+        <div class="tip">{{ cartItemCount }}</div>
+      </a>
+    </li>
+  </ul>
+  <div class="col-md-12">
+    <input
+      *ngIf="!isAdminUser"
+      type="search"
+      class="search"
+      placeholder="Tìm kiếm"
+      
+    />
+    <button type="button" class="btn-search" *ngIf="!isAdminUser">
+      <i class="fa-solid fa-search"></i>
+    </button>
+  </div>
+  <div class="offcanvas__logo">
+    <a href="./index.html"><img src="img/logo.png" alt="" /></a>
+  </div>
+  <div id="mobile-menu-wrap">
+    <div class="slicknav_menu">
+      <a
+        href="#"
+        aria-haspopup="true"
+        role="button"
+        tabindex="0"
+        class="slicknav_btn slicknav_collapsed"
+        style="outline: none"
+        ><span class="slicknav_menutxt">MENU</span
+        ><span class="slicknav_icon"
+          ><span class="slicknav_icon-bar"></span
+          ><span class="slicknav_icon-bar"></span
+          ><span class="slicknav_icon-bar"></span></span
+      ></a>
+      <nav
+        class="slicknav_nav slicknav_hidden"
+        aria-hidden="true"
+        role="menu"
+        style="display: none"
+      >
+        <ul>
+          <li><a href="./index.html" role="menuitem">Home</a></li>
+          <li *ngIf="!isAdminUser">
+            <a>ĐIỆN THOẠI <i class="fa fa-caret-down"></i></a>
+            <ul class="dropdown dropdown-custom">
+              <li routerLink="phone">iPhone</li>
+              <li>Samsung</li>
+              <li>Xiaomi</li>
+            </ul>
+          </li>
+          <li *ngIf="!isAdminUser">
+            <a>TABLET <i class="fa fa-caret-down"></i></a>
+            <ul class="dropdown dropdown-custom">
+              <li>iPad</li>
+              <li>Samsung</li>
+              <li>Xiaomi</li>
+            </ul>
+          </li>
+          <li *ngIf="!isAdminUser">
+            <a>PHỤ KIỆN <i class="fa fa-caret-down"></i></a>
+            <ul class="dropdown dropdown-custom">
+              <li>Apple</li>
+              <li>Khác</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="offcanvas__auth">
+    <a routerLink="login">ĐĂNG NHẬP</a>
+  </div>
+</div>
+<header class="header">
+  <div class="container-fluid">
+    <div class="row col-lg-12 custom-header">
+      <div class="col-lg-2 custom-logo">
+        <div class="col-xl-2 col-lg-2">
+          <div class="header__logo">
+            <a href=""
+              ><img
+                class="logo"
+                src="https://images.squarespace-cdn.com/content/v1/62d09f54a49d6f1c78455cce/397032fd-0ef7-4e86-b1ae-a672413b0836/T1_Logo_White.png"
+                alt=""
+            /></a>
+          </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <!-- Thêm sự kiện (keyup) để gọi phương thức onSearch() -->
-        <input
-          *ngIf="!isAdminUser"
-          type="search"
-          class="search"
-          placeholder="Tìm kiếm"
-          (keyup)="onSearch($event)"
-        />
-        <button type="button" class="btn-search" *ngIf="!isAdminUser">
-          <i class="fa-solid fa-search"></i>
-        </button>
+      <div class="col-lg-4 custom-listmenu">
+        <nav class="header__menu">
+          <ul>
+            <li routerLink=""><a>Home</a></li>
+
+
+            <li *ngIf="!isAdminUser">
+              <a>ĐIỆN THOẠI <i class="fa fa-caret-down"></i></a>
+              <ul class="dropdown dropdown-custom">
+                <li routerLink="phone">iPhone</li>
+                <li>Samsung</li>
+                <li>Xiaomi</li>
+              </ul>
+            </li>
+            <li *ngIf="!isAdminUser">
+              <a>TABLET <i class="fa fa-caret-down"></i></a>
+              <ul class="dropdown dropdown-custom">
+                <li>iPad</li>
+                <li>Samsung</li>
+                <li>Xiaomi</li>
+              </ul>
+            </li>
+            <li *ngIf="!isAdminUser">
+              <a>PHỤ KIỆN <i class="fa fa-caret-down"></i></a>
+              <ul class="dropdown dropdown-custom">
+                <li>Apple</li>
+                <li>Khác</li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-lg-3">
+        <div class="col-md-12 search-custom">
+          <input
+            *ngIf="!isAdminUser"
+            type="search"
+            class="search"
+            placeholder="Tìm kiếm"
+            (keyup)="onSearch($event)"
+          />
+          <button type="button" class="btn-search" *ngIf="!isAdminUser">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        </div>
         <div *ngIf="searchResults.length > 0" class="search-results">
           <ul>
             <li *ngFor="let result of searchResults" style="margin-top: 15px">
@@ -71,59 +155,82 @@
         </div>
       </div>
 
-      <div class="col-md-2 text-center" style="margin-top: 10px; display: flex">
-        <!-- <div class="cart-icon" (click)="toggleCart()"> -->
-        <div class="cart-icon" *ngIf="!isAdminUser">
-          <a routerLink="cart">
-            <i class="fa-solid fa-shopping-cart"></i>
-          </a>
-          <div class="cart-value">
-            {{ cartItemCount }}
+      <div class="col-lg-3 action">
+        <div class="header__right">
+          <div class="header__right__auth" *ngIf="authService.isLoggedIn; else loginLink">
+            <i class="fa-solid fa-user" style="cursor: pointer" (click)="drop('user')"></i>
+            <div class="dropdown dropdown-user" *ngIf="id === 'user'">
+              <ul>
+                <li *ngIf="isAdminUser">
+                   <!-- Chỉ hiển thị link trang admin nếu người dùng là admin  -->
+                  <a routerLink="admin-dashboard">Trang Admin</a>
+                </li>
+                <li *ngIf="!isAdminUser">
+                  <a routerLink="dashboard">Trang cá nhân</a>
+                </li>
+                <li>
+                  <a (click)="logout()">Đăng xuất</a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
+            <ng-template #loginLink class="header__right__auth">
+              <a routerLink="login"><button class="btn">ĐĂNG NHẬP</button></a>
+              <!-- <a routerLink="register-user" class="sign_up">ĐĂNG KÝ</a> -->
 
-        <div class="cart-icon-2" *ngIf="isAdminUser">
-          <a routerLink="notification">
-            <i class="fa-solid fa-bell"></i>
-          </a>
-          <div class="cart-value">
-            {{ notificationCount }}
-          </div>
-        </div>
-
-        <div class="social-menu">
-          <ul>
-            <li
-              *ngIf="authService.isLoggedIn; else loginLink"
-              class="user"
-              (click)="drop('user')"
-            >
-              <!-- Hiển thị biểu tượng người dùng khi đã đăng nhập -->
-              <i class="fa-solid fa-user" style="cursor: pointer"></i>
-              <div class="dropdown dropdown-user" *ngIf="id === 'user'">
-                <ul>
-                  <li *ngIf="isAdmin">
-                    <!-- Chỉ hiển thị link trang admin nếu người dùng là admin -->
-                    <a routerLink="admin-dashboard">Trang Admin</a>
-                  </li>
-                  <li *ngIf="!isAdmin">
-                    <a routerLink="dashboard">Trang cá nhân</a>
-                  </li>
-                  <li>
-                    <a (click)="logout()">Đăng xuất</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <ng-template #loginLink>
-              <!-- Hiển thị nút Đăng nhập khi chưa đăng nhập -->
-              <li>
-                <a routerLink="login" class="login"> Đăng nhập </a>
-              </li>
             </ng-template>
+          <ul class="header__right__widget">
+            <li *ngIf="isAdminUser">
+              <a routerLink="notification"
+                ><span class="fa-solid fa-bell"></span>
+                <div class="tip">{{notificationCount}}</div>
+              </a>
+            </li>
+            <li *ngIf="!isAdminUser">
+              <a routerLink="cart"
+                ><span class="icon_bag_alt"></span>
+                <div class="tip">{{ cartItemCount }}</div>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
     </div>
+    <div class="canvas__open" (click)="toggleActiveClass()">
+      <i class="fa fa-bars"></i>
+    </div>
   </div>
 </header>
+
+<!-- <header>
+  <div class="row">
+    <div class="social-menu">
+      <ul>
+        <li
+          *ngIf="authService.isLoggedIn; else loginLink"
+          class="user"
+          (click)="drop('user')"
+        >
+           Hiển thị biểu tượng người dùng khi đã đăng nhập
+          <i class="fa-solid fa-user" style="cursor: pointer"></i>
+          <div class="dropdown dropdown-user" *ngIf="id === 'user'">
+            <ul>
+              <li *ngIf="isAdmin">
+                 Chỉ hiển thị link trang admin nếu người dùng là admin
+                <a routerLink="admin-dashboard">Trang Admin</a>
+              </li>
+              <li *ngIf="!isAdmin">
+                <a routerLink="dashboard">Trang cá nhân</a>
+              </li>
+              <li>
+                <a (click)="logout()">Đăng xuất</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <ng-template #loginLink> </ng-template>
+      </ul>
+    </div>
+  </div>
+</header> -->
+<script></script>

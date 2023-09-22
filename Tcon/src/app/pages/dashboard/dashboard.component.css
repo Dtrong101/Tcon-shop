@@ -1,10 +1,14 @@
 .nav-item{
-    font-size: 18px;
-    margin-top: 10px;
+    font-size: 20px;
+    margin-top: 30px;
 }
 
+.nav-item i {
+  margin-right: 30px;
+}
 .nav-item a{
-  color: #ff4000;
+  color: #eb5726;
+  font-size: 17px;
 }
 
 .nav-item a:hover{
@@ -83,6 +87,22 @@
   .edit-form button:hover {
     background-color: #d04212;
   }
+
+  @media (max-width: 1024px){
+    .nav-item a{
+      font-size: 10px;
+    }
+    .nav-item{
+      font-size: 15px;
+      margin-top: 30px;
+  }
+
+  .nav-item i {
+    margin-right: 30px;
+    font-size: 10px;
+  }
+  }
+
 
 
   @media (max-width: 768px) {

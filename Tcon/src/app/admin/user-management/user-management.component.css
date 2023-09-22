@@ -13,3 +13,44 @@
     display: flex;
     flex-direction: column;
 }
+.card-body{
+  overflow: auto;
+}
+
+
+@media (max-width: 768px) {
+
+/* .card-body{
+  font-size: 10px
+} */
+.table th{
+  font-size: 11px;
+
+}
+.table tbody{
+  font-size: 10px;
+}
+.container{
+  font-size: 12px;
+}
+}
+
+@media (max-width:430px){
+  /* .card-body{
+    font-size: 20px
+  } */
+  .table{
+    width: 100px;
+    height: 100px;
+  }
+  .table th{
+    font-size: 11px;
+
+  }
+  .table tbody{
+    font-size: 10px;
+  }
+  /* .container{
+    font-size: 10px;
+  } */
+}

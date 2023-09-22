@@ -63,4 +63,41 @@
       margin-left: 500px;
     }
 
+    @media(max-width: 1024px)
+    {
+       .pagination{
+        margin-left: 250px;
+       }
+    }
+
+    @media(max-width: 768px)
+    {
+      .pagination{
+        margin-left: 125px;
+      }
+    }
+
+    @media(max-width: 430px)
+    {
+      .pagination{
+        margin-left: -35px;
+        font-size: 10px;
+      }
+
+      .data-box h3{
+        font-size: 17px;
+      }
+
+      .data-box thead{
+        font-size: 13px;
+      }
+
+      .data-box tbody, .data-box p{
+        font-size: 10px;
+      }
+
+      .dashboard .data-box{
+        padding: 0.5rem;
+      }
+    }
 
