@@ -18,6 +18,8 @@ Dự án của chúng tôi được xây dựng bằng sử dụng:
 - TypeScript
 - HTML/CSS
 - Firebase
+- Tích hợp chat bên thứ ba Tawk.io
+- Tích hợp thanh toán paypal
   
 
 
