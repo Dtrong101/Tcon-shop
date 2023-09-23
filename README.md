@@ -16,6 +16,7 @@ Trang web của chúng tôi có thể được truy cập tại [Tcon] (https://
 Dự án của chúng tôi được xây dựng bằng sử dụng:
 
 - TypeScript
+- Angular
 - HTML/CSS
 - Firebase
 - Tích hợp chat bên thứ ba Tawk.io
